@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Address Book by Freddy Silber
 
-Things you may want to cover:
+## Outline
 
-* Ruby version
+A web app designed for keeping track of personal contacts and connections
 
-* System dependencies
+## Instructions
 
-* Configuration
+1. Fork and Clone this repository to your machine.
 
-* Database creation
+2. Open the project in your desired IDE (cd to the project root)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3. Run 'rails s' or 'rails server' to open the application in your browser
