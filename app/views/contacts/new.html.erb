@@ -5,6 +5,14 @@
 		<%= f.text_field :first_name, :class => 'field' %>
 		<br/>
 		<%= f.label :last_name %>
-		<%= f.text_field :last_name%>
+		<%= f.text_field :last_name, :class => 'field' %>
+		<br/>
+		<%= f.label :phone_number %>
+		<%= f.number_field :phone_number, :class => 'field' %>
+		<br/>
+		<%= f.label :email %>
+		<%= f.text_field :email, :class => 'field' %>
+		<br/>
+		<%= f.submit 'Save', :class => 'button' %>
 	<% end %>
 </center>

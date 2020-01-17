@@ -25,19 +25,32 @@
 	margin: .5rem;
 	border-radius: 15px;
 	font-size: 1rem;
+	transition: .5s;
+	border: none;
+	width: 10rem;
+}
+.button:hover {
+	background: rgb(76, 248, 148);
+	color: #666;
+	transition: .5s;
 }
 .navigationBar {
 	display: flex;
 	justify-content: flex-end;
 	background: #eee;
-	padding: .5rem;
 }
 .navButton {
-	margin: 0rem .5rem 0rem .5rem;
 	color: black;
 	text-decoration: none;
-	padding: .25rem;
-	border-radius: 5px;
+	padding: .5rem;
+	border-collapse: collapse;
+	width: 10rem;
+	text-align: center;
+	border-right: 1px solid dodgerblue;
+	border-left: 1px solid dodgerblue;
+}
+.navButton:nth-child(2) {
+	border: 0;
 }
 .navButton:hover {
 	color: dodgerblue;
