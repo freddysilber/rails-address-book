@@ -1,0 +1,12 @@
+<center>
+	<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+		<h1>Sign Up</h1>
+		<%= f.label :username %>
+		<%= f.text_field :username, :class => 'field' %>
+		<br />
+		<%= f.label :password %>
+		<%= f.text_field :password, :class => 'field' %>
+		<br />
+		<%= f.submit "Create User", :class => 'button' %>
+	<% end %>
+</center>
