@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
    def create
-    # raise params
     user = User.new(user_params)
     if user.valid?
       user.save
@@ -16,7 +15,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if logged_in?
+      @user = User.find(params[:id])
+    end
   end
 
   private 
