@@ -46,11 +46,10 @@
 	border-collapse: collapse;
 	width: 10rem;
 	text-align: center;
-	border-right: 1px solid dodgerblue;
 	border-left: 1px solid dodgerblue;
 }
-.navButton:nth-child(2) {
-	border: 0;
+.navButton:last-child {
+	border-right: 1px solid dodgerblue;
 }
 .navButton:hover {
 	color: dodgerblue;

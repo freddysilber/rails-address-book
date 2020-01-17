@@ -10,11 +10,15 @@
   </head>
 
   <body>
-    <div class="navigationBar">
-      <%= link_to "Home", "/", :class => 'navButton' %>
-      <%= link_to "New Contact", "/contacts/new", :class => 'navButton' %>
-      <%= link_to "My Contacts", "/contacts/show", :class => 'navButton' %>
-    </div>
+    <% if logged_in? %>
+      <div class="navigationBar">
+        <%= link_to "Home", "/", :class => 'navButton' %>
+        <%= link_to "New Contact", "/contacts/new", :class => 'navButton' %>
+        <%= link_to "My Contacts", "/contacts/show", :class => 'navButton' %>
+        <%= link_to "Log Out", "/sessions/destroy", :class => 'navButton' %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
