@@ -1,0 +1,10 @@
+<center>
+	<%= form_for @contact, controller: 'contacts', action: 'create' do |f| %>
+		<h1>New Contact</h1>
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name, :class => 'field' %>
+		<br/>
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name%>
+	<% end %>
+</center>

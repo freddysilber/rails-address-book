@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    if logged_in? # is this even needed????
+    # if logged_in? # is this even needed????
       @user = User.find(params[:id])
-    end
+    # end
   end
 
   private 

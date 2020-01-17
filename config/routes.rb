@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # get 'users/new'
   # get 'users/show'
   resources :users
+  resources :contacts # later, we can nest a route for notes to a contact?
 end

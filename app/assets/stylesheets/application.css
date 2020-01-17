@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+ .field {
+ 	margin: .5rem;
+ 	padding: .5rem;
+ 	border-radius: 5px;
+}
+.button {
+	background: dodgerblue;
+	color: white;
+	padding: .5rem;
+	margin: .5rem;
+	border-radius: 15px;
+	font-size: 1rem;
+}
+.navigationBar {
+	display: flex;
+	justify-content: flex-end;
+	background: #eee;
+	padding: .5rem;
+}
+.navButton {
+	margin: 0rem .5rem 0rem .5rem;
+	color: black;
+	text-decoration: none;
+	padding: .25rem;
+	border-radius: 5px;
+}
+.navButton:hover {
+	color: dodgerblue;
+	background: white;
+}
