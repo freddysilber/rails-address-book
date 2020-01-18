@@ -10,16 +10,18 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <div class="navigationBar">
-        <%= link_to "Home", "/", :class => 'navButton' %>
-        <%= link_to "New Contact", "/contacts/new", :class => 'navButton' %>
-        <%= link_to "My Contacts", "/contacts", :class => 'navButton' %>
-        <%= link_to "My Profile", "/users/show", :class => 'navButton' %>
-        <%= link_to "Log Out", "/logout", :class => 'navButton' %>
-      </div>
-    <% end %>
+    <div class="masterOuter">
+      <% if logged_in? %>
+        <div class="navigationBar">
+          <%= link_to "Home", "/", :class => 'navButton' %>
+          <%= link_to "New Contact", "/contacts/new", :class => 'navButton' %>
+          <%= link_to "My Contacts", "/contacts", :class => 'navButton' %>
+          <%= link_to "My Profile", "/users/show", :class => 'navButton' %>
+          <%= link_to "Log Out", "/logout", :class => 'navButton' %>
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ /* @font-face {
+	 font-family: 'Razed';
+	 src: url('/assets/razed_font');
+ }
+ h1 {
+	 font-family: 'razed_font';
+ } */
  .field {
  	margin: .5rem;
  	padding: .5rem;
@@ -54,4 +61,7 @@
 .navButton:hover {
 	color: dodgerblue;
 	background: white;
+}
+.masterOuter {
+	/* background-color: lightskyblue; */
 }
