@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
 	def index
 		@contacts = Contact.all
+		redirect_to "contacts/index"
 	end
 
 	def new
@@ -8,7 +9,10 @@ class ContactsController < ApplicationController
 	end
 
 	def create 
+		# raise contact_params
+		raise params
 		contact = Contact.create(contact_params)
+		raise contact.valid?
 		redirect_to "/contacts/#{contact.id}"
 		# raise contact_params
 		# contact = Contact.new(contact_params)
