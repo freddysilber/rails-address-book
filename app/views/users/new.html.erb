@@ -1,4 +1,6 @@
 <center>
+<%= link_to "Back", root_path, :class => 'button'%>
+
 	<%= form_for @user, controller: 'users', action: 'create' do |f| %>
 		<h1>Sign Up</h1>
 		<%= f.label :username %>

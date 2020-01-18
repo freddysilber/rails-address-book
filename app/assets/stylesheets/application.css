@@ -36,8 +36,19 @@
 	border: none;
 	width: 10rem;
 }
+a.button {
+	float: left;
+	text-decoration: none;
+	background: white;
+	border: 1px solid #666;
+	color: black
+}
+a.button:hover {
+	background: #eee;
+}
 .button:hover {
-	background: rgb(76, 248, 148);
+	/* background: rgb(76, 248, 148); */
+	background: lightskyblue;
 	color: #666;
 	transition: .5s;
 }
