@@ -1,8 +1,26 @@
-<h1>My Contacts</h1>
-<% @contacts.each do |c| %>
-	<p>First Name: <%= c.first_name %></p>
-	<p>Last Name: <%= c.last_name %></p>
-	<p>Phone Number: <%= c.phone_number %></p>
-	<p>email: <%= c.email %></p>
-	<hr/>
-<% end %>
+<div style="display: flex">
+	<div style="border-right: 1px solid #666">
+		<h1>My Contacts</h1>
+		<%= render 'form'%>
+	</div>
+
+	<div>
+		<h1>Create Contact</h1>
+		<%= form_for @contact, controller: 'contacts', action: 'create' do |f| %>
+			<h1>New Contact</h1>
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name, :class => 'field' %>
+			<br/>
+			<%= f.label :last_name %>
+			<%= f.text_field :last_name, :class => 'field' %>
+			<br/>
+			<%= f.label :phone_number %>
+			<%= f.number_field :phone_number, :class => 'field' %>
+			<br/>
+			<%= f.label :email %>
+			<%= f.text_field :email, :class => 'field' %>
+			<br/>
+			<%= f.submit 'Save', :class => 'button' %>
+	<% end %>
+	</div>
+</div>
