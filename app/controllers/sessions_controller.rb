@@ -8,8 +8,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session.delete :user_id
-		# flash[:message] = 'See you later!'
-		flash.alert = "See you later! :)"
 		redirect_to '/'
 	end
 
