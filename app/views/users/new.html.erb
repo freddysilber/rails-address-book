@@ -1,6 +1,4 @@
 <center>
-	<h1>User: <%= @user.username %></h1>
-
 	<%= form_for @user, controller: 'users', action: 'create' do |f| %>
 		<h1>Sign Up</h1>
 		<%= f.label :username %>
