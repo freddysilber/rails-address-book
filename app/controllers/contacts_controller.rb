@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
 	def index
 		@contacts = Contact.all
-		redirect_to "contacts/index"
 	end
 
 	def new
@@ -9,11 +8,27 @@ class ContactsController < ApplicationController
 	end
 
 	def create 
+		contact = Contact.new(contact_params)
+		# contact.user_id = current_user.id
+		
+		if contact.valid?
+			contact.save
+			redirect_to "/contacts/#{contact.id}"
+		else
+			raise
+			# redirect_to '/'
+		end
+		# raise params
+		# @contact = Contact.new
+		# @contact.first_name = params[:first_name]
+		# @contact.save
+		# redirect_to contact_path(@contact)
+
 		# raise contact_params
-		raise params
-		contact = Contact.create(contact_params)
-		raise contact.valid?
-		redirect_to "/contacts/#{contact.id}"
+		# raise params
+		# contact = Contact.create(contact_params)
+		# raise contact.valid?
+		# redirect_to "/contacts/#{contact.id}"
 		# raise contact_params
 		# contact = Contact.new(contact_params)
 		# # raise contact.valid?
@@ -24,12 +39,14 @@ class ContactsController < ApplicationController
 	end
 
 	def show
-		@contact = Contact.find_by(id: params[:id])
+		# @contact = Contact.find_by(id: params[:id])
+		@contact = Contact.find(params[:id])
+		render 'show'
 	end
 
 	private
 
 	def contact_params
-    	params.require(:contact).permit(:first_name, :last_name, :phone_number, :email)
+    	params.require(:contact).permit(:first_name, :last_name, :phone_number, :email, :user_id)
   	end
 end

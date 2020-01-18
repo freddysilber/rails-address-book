@@ -15,4 +15,13 @@
 		<br/>
 		<%= f.submit 'Save', :class => 'button' %>
 	<% end %>
+
+	<%= form_tag contacts_path do %>
+		<label>Post title:</label><br>
+		<%= text_field_tag :first_name %><br>
+
+	
+		<%= submit_tag "Submit Post" %>
+	<% end %>
+
 </center>

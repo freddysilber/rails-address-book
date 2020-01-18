@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :contacts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'users#new'
   # get 'users/new'
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   resources :sessions
 
 
-  get '/signin' => 'sessions#new'
-  post '/signin' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  # get '/signin' => 'sessions#new'
+  # post '/signin' => 'sessions#create'
+  # post '/logout' => 'sessions#destroy'
 end

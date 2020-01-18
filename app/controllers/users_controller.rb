@@ -8,18 +8,19 @@ class UsersController < ApplicationController
     if user.valid?
       user.save
       session[:user_id] = user[:id]
-      # redirect_to '/users/#{user.id}'
-      redirect_to user_path(user.id)
+      redirect_to "/users/#{user.id}"
     else
       redirect_to '/'
     end
   end
   
   def show
-    # if logged_in? # is this even needed????
     @user = User.find(params[:id])
-    redirect_to user_path(user.id)
-    # end
+    if current_user == @user
+      render 'show'
+    else 
+      redirect_to '/'
+    end
   end
 
   private 
