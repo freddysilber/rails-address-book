@@ -1,26 +1,31 @@
 <center>
 <%= link_to "Back", root_path, :class => 'button'%>
-	<%= form_tag(controller: "sessions", action: "create", method: "post") do %>
-		<h1>Log In</h1>
-		<%= collection_select :user, :username, User.all, :username, :username %>
-		<br />
-		<%= label_tag("Password") %>
-		<br />
-		<%= password_field_tag(:password) %>
-		<br />
-		<%= submit_tag("Sign In") %>
-	<% end %>
+<br/>
+<hr/>
+<br/>
+	<div>
+		<%= form_tag(controller: "sessions", action: "create", method: "post") do %>
+			<h1>Log In</h1>
+			<%= collection_select :user, :username, User.all, :username, :username %>
+			<br />
+			<%= label_tag("Password") %>
+			<br />
+			<%= password_field_tag(:password) %>
+			<br />
+			<%= submit_tag("Sign In") %>
+		<% end %>
 
-	<hr/>
+		<hr/>
 
-	<%= form_for sessions_path, controller: 'sessions', action: 'create', method: :post do |f|  %>
-		<h1>Log In</h1>
-		<%= f.label :username %>
-		<%= collection_select :user, :username, User.all, :username, :username, :class => 'field' %>
-		<br/>
-		<%= f.label :password %>
-		<%= f.text_field :password, :class => 'field' %>
-		<br/>
-		<%= f.submit "Log in", :class => 'button' %>
-	<% end %>
+		<%= form_for sessions_path, controller: 'sessions', action: 'create', method: :post do |f|  %>
+			<h1>Log In</h1>
+			<%= f.label :username %>
+			<%= collection_select :user, :username, User.all, :username, :username, :class => 'field' %>
+			<br/>
+			<%= f.label :password %>
+			<%= f.text_field :password, :class => 'field' %>
+			<br/>
+			<%= f.submit "Log in", :class => 'button' %>
+		<% end %>
+	</div>
 </center>
