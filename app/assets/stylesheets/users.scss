@@ -1,14 +1,13 @@
 .welcomeNav {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 }
 .getStartedLink {
 	color: black;
 	text-decoration: none;
 	font-size: 3em;
-	padding: calc(50vh / 2);
+	padding: 20%;
 	background: lightskyblue;
-
 }
 .getStartedLink:hover {
 	opacity: .8;
