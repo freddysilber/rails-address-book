@@ -73,6 +73,6 @@ a.button:hover {
 	color: dodgerblue;
 	background: white;
 }
-.masterOuter {
-	/* background-color: lightskyblue; */
+hr {
+	color: #666;
 }
