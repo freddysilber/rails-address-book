@@ -1,16 +1,17 @@
-<div style="display: flex; ">
-	<div style="border-right: 1px solid #666; margin: 1rem; width: 30%">
+<div class="indexContainer">
+	<div class="indexTitle">
 		<center>
 			<h1>My Contacts</h1>
+			<hr/>
 		</center>
-		<hr/>
 		<%= render 'form'%>
 	</div>
 
-	<div style="width: 100%">
+	<div class="indexNewForm">
 		<%= form_for @contact, controller: 'contacts', action: 'create' do |f| %>
 			<center>
 				<h1>New Contact</h1>
+				<hr/>
 				<%= f.label :first_name %>
 				<%= f.text_field :first_name, :class => 'field' %>
 				<br/>

@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController	
 	def index
 		@contacts = Contact.all
-		@contact = Contact.new
+		@contact = self.new
 	end
 
 	def new
@@ -10,6 +10,7 @@ class ContactsController < ApplicationController
 
 	def create 
 		contact = Contact.new(contact_params)
+		contact.user_id = current_user.id
 		if contact.valid?
 			contact.save
 			redirect_to "/contacts"
