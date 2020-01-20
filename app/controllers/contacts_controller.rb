@@ -12,7 +12,6 @@ class ContactsController < ApplicationController
 		contact = Contact.new(contact_params)
 		if contact.valid?
 			contact.save
-			# redirect_to "/contacts/#{contact.id}"
 			redirect_to "/contacts"
 		else
 			raise

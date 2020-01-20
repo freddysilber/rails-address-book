@@ -1,5 +1,6 @@
 .welcomeNav {
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	height: -webkit-fill-available;
 }
@@ -9,7 +10,6 @@
 	font-size: 3em;
 	padding: 20%;
 	background: lightskyblue;
-	height: vh;
 }
 .getStartedLink:last-child {
 	background: #666;

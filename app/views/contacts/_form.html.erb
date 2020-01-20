@@ -1,5 +1,6 @@
 <div class="partial" style="height: 38rem; overflow: scroll">
 	<% @contacts.each do |c| %>
+		<h1><%= link_to "#{c.first_name.capitalize} #{c.last_name.capitalize}", "/contacts/#{c.id}", :class => 'navigateToContact' %></h1>
 		<p>First Name: <%= c.first_name %></p>
 		<p>Last Name: <%= c.last_name %></p>
 		<p>Phone Number: <%= c.phone_number %></p>
