@@ -11,6 +11,8 @@ class ContactsController < ApplicationController
 	def create 
 		contact = Contact.new(contact_params)
 		contact.user_id = current_user.id
+		contact.first_name = contact_params[:first_name].capitalize
+		contact.last_name = contact_params[:last_name].capitalize
 		if contact.valid?
 			contact.save
 			redirect_to "/contacts"
@@ -22,6 +24,16 @@ class ContactsController < ApplicationController
 	def show
 		@contact = Contact.find(params[:id])
 		render 'show'
+	end
+
+	def edit
+		@contact = Contact.find_by(id: params[:id])
+		redirect_to '/contacts/edit'
+	end
+
+	def destroy
+		Contact.find(params[:id]).destroy
+		redirect_to "/contacts"
 	end
 
 	private
