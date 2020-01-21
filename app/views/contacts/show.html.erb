@@ -1,6 +1,6 @@
 <center>
 	<div>
-		<%= link_to "Edit", @contact, method: :edit, :class => "button" %>
+		<%= link_to "Edit", "#{@contact.id}/edit", :class => "button" %>
 		<%= link_to "Delete", @contact, method: :delete, data: { confirm: "Are you sure you want to delete contact: #{@contact.first_name}?" }, :class => "button" %>
 		<h1 class="showTitle" style="margin-right: 25%">Contact for: <%= @contact.first_name%></h1>
 	</div>

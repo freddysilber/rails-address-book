@@ -28,7 +28,8 @@ class ContactsController < ApplicationController
 
 	def edit
 		@contact = Contact.find(params[:id])
-		redirect_to 'edit'
+		# render 'contacts/edit'
+		render 'edit'
 	end
 
 	def update
