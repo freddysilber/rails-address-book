@@ -13,17 +13,14 @@
  *= require_tree .
  *= require_self
  */
- /* @font-face {
-	 font-family: 'Razed';
-	 src: url('/assets/razed_font');
- }
- h1 {
-	 font-family: 'razed_font';
- } */
- .field {
+.field {
  	margin: .5rem;
  	padding: .5rem;
- 	border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #666; 
+}
+input:focus {
+	outline: none;
 }
 .button {
 	background: dodgerblue;
@@ -47,7 +44,6 @@ a.button:hover {
 	background: #eee;
 }
 .button:hover {
-	/* background: rgb(76, 248, 148); */
 	background: lightskyblue;
 	color: #666;
 	transition: .5s;
@@ -74,5 +70,5 @@ a.button:hover {
 	background: white;
 }
 hr {
-	color: #666;
+	border: .5px solid #666;
 }
