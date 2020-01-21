@@ -12,7 +12,7 @@
       <% if logged_in? %>
         <div class="navigationBar">
           <%= link_to "My Contacts", "/contacts", :class => 'navButton' %>
-          <%= link_to "My Profile", "/users/#{current_user.id}", :class => 'navButton' %>
+          <%= link_to "My Profile", "/users/show", :class => 'navButton' %>
           <%= link_to "Log Out", "/logout", :class => 'navButton' %>
         </div>
       <% end %>

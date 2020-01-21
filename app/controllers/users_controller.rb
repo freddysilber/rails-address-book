@@ -4,6 +4,14 @@ class UsersController < ApplicationController
 	end
 
 	# def index
+	# 	if current_user.id
+	# 		redirect_to 'show'
+	# 	else
+	# 		redirect_to root
+	# 	end
+	# end
+
+	# def index
 	# 	@user = User.find_by(id: current_user.id)
 	# 	if logged_in?
 	# 		redirect_to 'show'
@@ -24,7 +32,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.find_by(id: current_user.id)
 		if current_user == @user
 			render 'show'
 		else 
