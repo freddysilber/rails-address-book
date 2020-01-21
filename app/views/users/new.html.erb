@@ -6,11 +6,9 @@
 	<div>
 		<%= form_for @user, controller: 'users', action: 'create' do |f| %>
 			<h1>Sign Up</h1>
-			<%= f.label :username %>
-			<%= f.text_field :username, :class => 'field' %>
+			<%= f.text_field :username, :placeholder => 'Username', :class => 'field' %>
 			<br />
-			<%= f.label :password %>
-			<%= f.text_field :password, :class => 'field' %>
+			<%= f.text_field :password, :placeholder => 'Password', :class => 'field' %>
 			<br />
 			<%= f.submit "Create User", :class => 'button' %>
 		<% end %>

@@ -1,12 +1,10 @@
 <div class="partial">
 	<% @contacts.each do |c| %>
 		<h1><%= link_to "#{c.first_name.capitalize} #{c.last_name.capitalize}", "/contacts/#{c.id}", :class => 'navigateToContact' %></h1>
-		<p>First Name: <%= c.first_name %></p>
-		<p>Last Name: <%= c.last_name %></p>
-		<p>Phone Number: <%= c.phone_number %></p>
-		<p>Email: <%= c.email %></p>
-
-		<p>User Id: <%= c.user_id %></p>
+		<p><em>First Name: </em><%= c.first_name %></p>
+		<p><em>Last Name: </em><%= c.last_name %></p>
+		<p><em>Phone Number: </em><%= c.phone_number %></p>
+		<p><em>Email: </em><%= c.email %></p>
 		<hr/>
 	<% end %>
 </div>

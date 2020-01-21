@@ -52,18 +52,24 @@ a.button:hover {
 	display: flex;
 	justify-content: flex-end;
 	background: #eee;
+	padding: 0rem .25rem 0rem .25rem;
+	border-radius: 5px;
 }
 .navButton {
 	color: black;
+	font-style: italic;
 	text-decoration: none;
+	text-emphasis: 1;
 	padding: .5rem;
 	border-collapse: collapse;
+	transition: .5s;
 	width: 10rem;
 	text-align: center;
 	border-left: 1px solid dodgerblue;
 }
 .navButton:last-child {
 	border-right: 1px solid dodgerblue;
+	transition: .5s;
 }
 .navButton:hover {
 	color: dodgerblue;
