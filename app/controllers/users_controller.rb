@@ -3,23 +3,6 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
-	# def index
-	# 	if current_user.id
-	# 		redirect_to 'show'
-	# 	else
-	# 		redirect_to root
-	# 	end
-	# end
-
-	# def index
-	# 	@user = User.find_by(id: current_user.id)
-	# 	if logged_in?
-	# 		redirect_to 'show'
-	# 	else
-	# 		redirect_to '/'
-	# 	end
-	# end
-
 	def create
 		user = User.new(user_params)
 		if user.valid?
