@@ -1,5 +1,4 @@
 <center>
-	<%#= link_to "Edit", "/contacts/edit", :class => 'button' %>
 	<div>
 		<%= link_to "Edit", @contact, method: :edit, :class => "button" %>
 		<%= link_to "Delete", @contact, method: :delete, data: { confirm: "Are you sure you want to delete contact: #{@contact.first_name}?" }, :class => "button" %>

@@ -27,8 +27,12 @@ class ContactsController < ApplicationController
 	end
 
 	def edit
-		@contact = Contact.find_by(id: params[:id])
-		redirect_to '/contacts/edit'
+		@contact = Contact.find(params[:id])
+		redirect_to 'edit'
+	end
+
+	def update
+		raise contact_params.inspect
 	end
 
 	def destroy

@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :users
   resources :contacts # later, we can nest a route for notes to a contact?
+  # resources :contacts, only: [:index, :show, :new, :create, :edit, :update]
+  
+  # get 'contacts/:id/edit', to: 'contacts#edit', as: :edit_contact
+  # patch 'contacts/:id', to: 'contacts#update'
   resources :sessions
+
   
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
