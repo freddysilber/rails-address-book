@@ -16,6 +16,7 @@ class ContactsController < ApplicationController
 		if contact.valid?
 			contact.save
 			redirect_to "/contacts"
+
 		else
 			raise
 		end
@@ -28,12 +29,13 @@ class ContactsController < ApplicationController
 
 	def edit
 		@contact = Contact.find(params[:id])
-		# render 'contacts/edit'
 		render 'edit'
 	end
 
 	def update
-		raise contact_params.inspect
+		@contact = Contact.find(params[:id])
+		@contact.update(contact_params)
+		redirect_to contact_path(@contact)
 	end
 
 	def destroy
@@ -44,6 +46,12 @@ class ContactsController < ApplicationController
 	private
 
 	def contact_params
-    	params.require(:contact).permit(:first_name, :last_name, :phone_number, :email, :user_id)
+    	params.require(:contact).permit(
+			:first_name, 
+			:last_name, 
+			:phone_number, 
+			:email, 
+			:user_id
+		)
   	end
 end

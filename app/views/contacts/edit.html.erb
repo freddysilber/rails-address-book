@@ -1,1 +1,11 @@
 <h1>Edit Contact: <%= @contact.first_name %></h1>
+
+<div>
+	<%= form_for @contact, controller: 'contacts', action: 'update' do |c| %>
+		<h1>Edit Contact</h1>
+		<hr/>
+		<%= label_tag(:username)%>
+		<%= c.text_field :first_name, :placholder => :first_name, :class => "field" %>
+		<%= submit_tag "Update", class: "button" %>
+	<% end %>
+</div>

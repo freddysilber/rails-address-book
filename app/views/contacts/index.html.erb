@@ -8,19 +8,19 @@
 	</div>
 
 	<div class="indexNewForm">
-		<%= form_for @contact, controller: 'contacts', action: 'create' do |f| %>
+		<%= form_for @contact, controller: 'contacts', action: 'create' do |c| %>
 			<center>
 				<h1>New Contact</h1>
 				<hr/>
-				<%= f.text_field :first_name, :placeholder => 'First Name', :class => 'field' %>
+				<%= c.text_field :first_name, :placeholder => :first_name, :class => 'field' %>
 				<br/>
-				<%= f.text_field :last_name, :placeholder => 'Last Name', :class => 'field' %>
+				<%= c.text_field :last_name, :placeholder => :last_name, :class => 'field' %>
 				<br/>
-				<%= f.number_field :phone_number, :placeholder => 'Phone Number', :class => 'field' %>
+				<%= c.number_field :phone_number, :placeholder => 'Phone Number', :class => 'field' %>
 				<br/>
-				<%= f.text_field :email, :placeholder => 'Email', :class => 'field' %>
+				<%= c.text_field :email, :placeholder => 'Email', :class => 'field' %>
 				<br/>
-				<%= f.submit 'Save', :class => 'button' %>
+				<%= c.submit 'Save', :class => 'button' %>
 			</center>
 		<% end %>
 	</div>

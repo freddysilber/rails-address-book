@@ -1,18 +1,18 @@
 <center>
-	<%= form_for @contact, controller: 'contacts', action: 'create' do |f| %>
+	<%= form_for @contact, controller: 'contacts', action: 'create' do |c| %>
 		<h1>New Contact</h1>
-		<%= f.label :first_name %>
-		<%= f.text_field :first_name, :class => 'field' %>
+		<%= c.label :first_name %>
+		<%= c.text_field :first_name, :class => 'field' %>
 		<br/>
-		<%= f.label :last_name %>
-		<%= f.text_field :last_name, :class => 'field' %>
+		<%= c.label :last_name %>
+		<%= c.text_field :last_name, :class => 'field' %>
 		<br/>
-		<%= f.label :phone_number %>
-		<%= f.number_field :phone_number, :class => 'field' %>
+		<%= c.label :phone_number %>
+		<%= c.number_field :phone_number, :class => 'field' %>
 		<br/>
-		<%= f.label :email %>
-		<%= f.text_field :email, :class => 'field' %>
+		<%= c.label :email %>
+		<%= c.text_field :email, :class => 'field' %>
 		<br/>
-		<%= f.submit 'Save', :class => 'button' %>
+		<%= c.submit 'Save', :class => 'button' %>
 	<% end %>
 </center>
