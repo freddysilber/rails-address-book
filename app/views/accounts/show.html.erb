@@ -2,14 +2,17 @@
 	<%= link_to "Back", accounts_path, :class => "button" %>
 	<%= link_to "Delete", @account, method: :delete, data: { confirm: "Are you sure you want to delete account: #{@account.name}?" }, :class => "button", :style => "float: right" %>
 	<%= link_to "Edit", "#{@account.id}/edit", :class => "button", :style => "float: right" %>
-	<%= link_to "New Contact", "/accounts/#{@account.id}/contacts/new", :class => "button", :style => "float: right" %>
+	<!--<%= link_to "New Contact", "/accounts/#{@account.id}/contacts/new", :class => "button", :style => "float: right" %>-->
 	<br/>
 	<hr/>
 	<br/>
 	<%= render partial: "accounts/account", locals: { a: @account } %>
 </center>
 <%# SHHOW CHILD CONTACTS LIST %>
-<h1>Related Contacts</h1>
+<div style="display: inline">
+	<%= link_to "New Contact", "/accounts/#{@account.id}/contacts/new", :class => "button", :style => "float: right" %>
+	<h1>Related Contacts</h1>
+</div>
 <hr/>
 <div style="display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap;">
 	<% @account.contacts.each do |c| %>
