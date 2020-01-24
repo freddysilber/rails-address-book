@@ -6,7 +6,13 @@
 	<br/>
 	<hr/>
 	<br/>
-	<h1 class="showTitle">Contact for: <%= @contact.first_name%></h1>
+	<h1 class="showTitle">Contact for: <%= @contact.first_name %></h1>
+
+	<% if @contact.account %>
+		<h1><em>Account: </em><%= @contact.account.name %></h1>
+		<br/>
+	<% end %>
+	
 	<h1><em>First Name: </em><%= @contact.first_name %></h1>
 	<h1><em>Last Name: </em><%= @contact.last_name %></h1>
 	<h1><em>Phone Number: </em><%= @contact.phone_number %></h1>

@@ -15,9 +15,10 @@
 				<br/>
 				<%= a.number_field :phone_number, :placeholder => :phone_number, :class => 'field' %>
 				<br/>
-				<%= label_tag(:active) %>
-				<%= a.check_box :active, :placeholder => :active, :class => 'field' %>
-				<br/>
+				<div class="field">
+					<%= label_tag(:active) %>
+					<%= a.check_box :active, :placeholder => :active %>
+				</div>
 				<%= a.text_field :account_type, :placeholder => :account_type, :class => 'field' %>
 				<br/>
 				<%= a.submit 'Save', :class => 'button' %>

@@ -19,6 +19,14 @@
 	border-radius: 5px;
 	border: 1px solid #666; 
 }
+select {
+	height: 2rem;
+	width: 11rem;
+	margin: 1em;
+}
+.field, select {
+	width: 20%;
+}
 input:focus {
 	outline: none;
 }
