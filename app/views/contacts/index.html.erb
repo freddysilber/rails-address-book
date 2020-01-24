@@ -12,6 +12,8 @@
 			<center>
 				<h1>New Contact</h1>
 				<hr/>
+				<%= c.collection_select :account_id, Account.all, :id, :name %>
+				<br/>
 				<%= c.text_field :first_name, :placeholder => :first_name, :class => 'field' %>
 				<br/>
 				<%= c.text_field :last_name, :placeholder => :last_name, :class => 'field' %>

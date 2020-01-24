@@ -9,8 +9,9 @@ class ContactsController < ApplicationController
 	end
 
 	def create 
+		# raise contact_params
 		contact = Contact.new(contact_params)
-		contact.user_id = current_user.id
+		# contact.user_id = current_user.id
 		contact.first_name = contact_params[:first_name].capitalize
 		contact.last_name = contact_params[:last_name].capitalize
 		if contact.valid?
@@ -47,11 +48,11 @@ class ContactsController < ApplicationController
 
 	def contact_params
     	params.require(:contact).permit(
+			:account_id,
+			:email, 
 			:first_name, 
 			:last_name, 
-			:phone_number, 
-			:email, 
-			:user_id
+			:phone_number
 		)
   	end
 end

@@ -46,12 +46,11 @@ class AccountsController < ApplicationController
 
 	def account_params
 		params.require(:account).permit(
-			:name,
-			# :contact_id,
-			:user_id,
-			:phone_number,
+			:account_type,
 			:active,
-			:account_type
+			:name,
+			:phone_number,
+			:user_id
 		)
 	end
 end

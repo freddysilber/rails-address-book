@@ -13,22 +13,21 @@
 ActiveRecord::Schema.define(version: 2020_01_24_034634) do
 
   create_table "accounts", force: :cascade do |t|
-    t.string "name"
-    t.integer "contact_id"
-    t.integer "user_id"
-    t.integer "phone_number"
-    t.boolean "active"
     t.string "account_type"
+    t.boolean "active"
+    t.string "name"
+    t.integer "phone_number"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "contacts", force: :cascade do |t|
+    t.string "email"
     t.string "first_name"
     t.string "last_name"
     t.integer "phone_number"
-    t.string "email"
-    t.integer "user_id"
+    t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
