@@ -1,11 +1,20 @@
-<h1>Edit Contact: <%= @contact.first_name %></h1>
-
-<div>
-	<%= form_for @contact, controller: 'contacts', action: 'update' do |c| %>
-		<h1>Edit Contact</h1>
-		<hr/>
-		<%= label_tag(:username)%>
-		<%= c.text_field :first_name, :placholder => :first_name, :class => "field" %>
-		<%= submit_tag "Update", class: "button" %>
-	<% end %>
-</div>
+<center>
+	<%= link_to "Back", contact_path, :class => "button" %>
+	<br/>
+	<hr/>
+	<br/>
+	<div>
+		<%= form_for @contact, controller: 'contacts', action: 'update' do |c| %>
+			<h1>Edit Contact: <%= @contact.first_name %></h1>
+			<%= c.text_field :first_name, :placholder => :first_name, :class => "field" %>
+			<br/>
+			<%= c.text_field :last_name, :placholder => :last_name, :class => "field" %>
+			<br/>
+			<%= c.text_field :phone_number, :placholder => :phone_number, :class => "field" %>
+			<br/>
+			<%= c.text_field :email, :placholder => :email, :class => "field" %>
+			<br/>
+			<%= submit_tag "Update", class: "button" %>
+		<% end %>
+	</div>
+</center>
