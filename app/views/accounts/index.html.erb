@@ -1,0 +1,21 @@
+<div class="indexContainer">
+	<div class="indexTitle">
+		<center>
+			<h1>My Accounts</h1>
+			<hr/>
+		</center>
+		<%= render 'form'%>
+	</div>
+
+	<div class="indexNewForm">
+		<%= form_for @account, controller: 'account', action: 'create' do |a| %>
+			<center>
+				<h1>New Account</h1>
+				<hr/>
+				<%= a.text_field :name, :placeholder => :name, :class => 'field' %>
+				<br/>
+				<%= a.submit 'Save', :class => 'button' %>
+			</center>
+		<% end %>
+	</div>
+</div>

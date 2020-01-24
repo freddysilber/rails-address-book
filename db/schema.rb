@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_223814) do
+ActiveRecord::Schema.define(version: 2020_01_24_034634) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "name"
+    t.integer "contact_id"
+    t.integer "user_id"
+    t.integer "phone_number"
+    t.boolean "active"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "first_name"

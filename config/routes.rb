@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :contacts
   resources :sessions
+  resources :accounts
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
