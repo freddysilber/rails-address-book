@@ -1,29 +1,15 @@
 <div class="indexContainer">
 	<div class="indexTitle">
-		<center>
-			<h1>My Contacts</h1>
-			<hr/>
-		</center>
-		<%= render 'form'%>
+		<center><h1>My Contacts</h1></center>
+		<hr/>
+		<% @contacts.each do |c| %>
+			<%= render partial: "contacts/contact", locals: { c: c } %>
+		<% end %>
 	</div>
 
 	<div class="indexNewForm">
-		<%= form_for @contact, controller: 'contacts', action: 'create' do |c| %>
-			<center>
-				<h1>New Contact</h1>
-				<hr/>
-				<%= c.collection_select :account_id, Account.all, :id, :name %>
-				<br/>
-				<%= c.text_field :first_name, :placeholder => :first_name, :class => 'field' %>
-				<br/>
-				<%= c.text_field :last_name, :placeholder => :last_name, :class => 'field' %>
-				<br/>
-				<%= c.number_field :phone_number, :placeholder => :phone_number, :class => 'field' %>
-				<br/>
-				<%= c.text_field :email, :placeholder => :email, :class => 'field' %>
-				<br/>
-				<%= c.submit 'Save', :class => 'button' %>
-			</center>
-		<% end %>
+		<center><h1>New Contact</h1></center>
+		<hr/>
+		<%= render "form"%>
 	</div>
 </div>

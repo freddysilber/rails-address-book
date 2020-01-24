@@ -1,12 +1,15 @@
-<div class="partial">
-	<% @contacts.each do |c| %>
-		<%= link_to "Edit", "/contacts/#{c.id}/edit", :class => "button", :style => "float: right; width: 4rem" %>
-		<h1><%= link_to "#{c.first_name.capitalize} #{c.last_name.capitalize}", "/contacts/#{c.id}", :class => 'navigateToContact' %></h1>
-		<p><em>First Name: </em><%= c.first_name %></p>
-		<p><em>Last Name: </em><%= c.last_name %></p>
-		<p><em>Phone Number: </em><%= c.phone_number %></p>
-		<p><em>Email: </em><%= c.email %></p>
-		<p><em>Account: </em><%= c.account.name %></p>
-		<hr/>
-	<% end %>
-</div>
+<%= form_for @contact do |c| %>
+	<center>
+		<%= c.collection_select :account_id, Account.all, :id, :name %>
+		<br/>
+		<%= c.text_field :first_name, :placeholder => :first_name, :class => 'field' %>
+		<br/>
+		<%= c.text_field :last_name, :placeholder => :last_name, :class => 'field' %>
+		<br/>
+		<%= c.number_field :phone_number, :placeholder => :phone_number, :class => 'field' %>
+		<br/>
+		<%= c.text_field :email, :placeholder => :email, :class => 'field' %>
+		<br/>
+		<%= c.submit 'Save', :class => 'button' %>
+	</center>
+<% end %>
