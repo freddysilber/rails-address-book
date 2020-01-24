@@ -1,5 +1,6 @@
 <div class="partial">
 	<% @accounts.each do |a| %>
+		<%= link_to "Edit", "#{a.id}/edit", :class => "button", :style => "float:right"%>
 		<h1><%= link_to "#{a.name.capitalize}", "/accounts/#{a.id}", :class => 'navigateToContact' %></h1>
 		<p><em>Name: </em><%= a.name %></p>
 		<p><em>Phone Number: </em><%= a.phone_number %></p>
