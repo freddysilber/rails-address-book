@@ -6,9 +6,5 @@
 	<br/>
 	<hr/>
 	<br/>
-	<h1 class="showTitle">Account for: <%= @account.name%></h1>
-	<h1><em>Name: </em><%= @account.name %></h1>
-	<h1><em>Phone Number: </em><%= @account.phone_number %></h1>
-	<h1><em>Active: </em><%= @account.active %></h1>
-	<h1><em>Type: </em><%= @account.account_type %></h1>
+	<%= render partial: "accounts/account", locals: { a: @account } %>
 </center>
