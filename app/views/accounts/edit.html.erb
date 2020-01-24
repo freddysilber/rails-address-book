@@ -1,0 +1,20 @@
+<center>
+	<%= link_to "Cancel", account_path, :class => "button" %>
+	<br/>
+	<hr/>
+	<br/>
+	<div>
+		<%= form_for @account, controller: 'accounts', action: 'update' do |a| %>
+			<h1>Edit Account: <%= @account.name %></h1>
+			<%= a.text_field :name, :placholder => :name, :class => "field" %>
+			<br/>
+			<%= a.number_field :phone_number, :placholder => :phone_number, :class => "field" %>
+			<br/>
+			<%= a.check_box :active, :placholder => :active, :class => "field" %>
+			<br/>
+			<%= a.text_field :account_type, :placholder => :account_type, :class => "field" %>
+			<br/>
+			<%= submit_tag "Update", class: "button" %>
+		<% end %>
+	</div>
+</center>

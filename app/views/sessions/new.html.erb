@@ -7,7 +7,6 @@
 		<%= form_tag(controller: "sessions", action: "create", method: "post") do %>
 			<h1>Log In</h1>
 			<%= label_tag(:username)%>
-			<%# < % = collection_select :user, :username, User.all, :username, :username %> 
 			<%= text_field_tag :username, nil, class: 'field' %>
 			<br />
 			<%= label_tag("Password") %>

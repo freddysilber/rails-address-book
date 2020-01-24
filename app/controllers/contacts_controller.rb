@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
 		contact.last_name = contact_params[:last_name].capitalize
 		if contact.valid?
 			contact.save
-			redirect_to "/contacts"
+			redirect_to '/contacts'
 
 		else
 			raise
@@ -40,7 +40,7 @@ class ContactsController < ApplicationController
 
 	def destroy
 		Contact.find(params[:id]).destroy
-		redirect_to "/contacts"
+		redirect_to '/contacts'
 	end
 
 	private

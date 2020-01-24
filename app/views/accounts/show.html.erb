@@ -1,1 +1,14 @@
-<h1>SHOW ACCOUNTS</h1>
+<center>
+	<%= link_to "Back", accounts_path, :class => "button" %>
+	<%= link_to "Delete", @account, method: :delete, data: { confirm: "Are you sure you want to delete account: #{@account.name}?" }, :class => "button", :style => "float:right" %>
+	<%= link_to "Edit", "#{@account.id}/edit", :class => "button", :style => "float:right" %>
+	<%= link_to "New Account", "/accounts/new", :class => "button", :style => "float:right"%>
+	<br/>
+	<hr/>
+	<br/>
+	<h1 class="showTitle">Account for: <%= @account.name%></h1>
+	<h1><em>Name: </em><%= @account.name %></h1>
+	<h1><em>Phone Number: </em><%= @account.phone_number %></h1>
+	<h1><em>Active: </em><%= @account.active %></h1>
+	<h1><em>Type: </em><%= @account.account_type %></h1>
+</center>

@@ -2,6 +2,12 @@
 	<% @accounts.each do |a| %>
 		<h1><%= link_to "#{a.name.capitalize}", "/accounts/#{a.id}", :class => 'navigateToContact' %></h1>
 		<p><em>Name: </em><%= a.name %></p>
+		<p><em>Phone Number: </em><%= a.phone_number %></p>
+		<p><em>Active: </em><%= a.active %></p>
+		<p><em>Type: </em><%= a.account_type %></p>
+
+		<%= a.user_id %>
+		<%= a.contact_id %>
 		<hr/>
 	<% end %>
 </div>

@@ -6,13 +6,19 @@
 		</center>
 		<%= render 'form'%>
 	</div>
-
 	<div class="indexNewForm">
 		<%= form_for @account, controller: 'account', action: 'create' do |a| %>
 			<center>
 				<h1>New Account</h1>
 				<hr/>
 				<%= a.text_field :name, :placeholder => :name, :class => 'field' %>
+				<br/>
+				<%= a.number_field :phone_number, :placeholder => :phone_number, :class => 'field' %>
+				<br/>
+				<%= label_tag(:active) %>
+				<%= a.check_box :active, :placeholder => :active, :class => 'field' %>
+				<br/>
+				<%= a.text_field :account_type, :placeholder => :account_type, :class => 'field' %>
 				<br/>
 				<%= a.submit 'Save', :class => 'button' %>
 			</center>

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_034634) do
     t.integer "user_id"
     t.integer "phone_number"
     t.boolean "active"
-    t.string "type"
+    t.string "account_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
