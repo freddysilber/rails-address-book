@@ -1,0 +1,25 @@
+.showTitle {
+	color: dodgerblue;
+}
+.navigateToContact {
+	color: dodgerblue;
+	transition: .5s;
+	text-decoration: none;
+}
+.navigateToContact:hover {
+	color: #666;
+	transition: .5s;
+	text-decoration: underline;
+}
+.indexNewForm {
+	width: 100%;
+}
+.indexContainer {
+	display: flex;
+}
+.contactsListContainer {
+	height: 100vh;
+	overflow: auto;
+	border-right: 1px solid #666;
+	width: 30%;
+}
