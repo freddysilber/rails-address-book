@@ -10,9 +10,12 @@
 			<br/>
 			<%= a.number_field :phone_number, :placholder => :phone_number, :class => "field" %>
 			<br/>
-			<%= a.check_box :active, :placholder => :active, :class => "field" %>
-			<br/>
 			<%= a.text_field :account_type, :placholder => :account_type, :class => "field" %>
+			<br/>
+			<div class="field">
+				<%= label_tag(:active) %>
+				<%= a.check_box :active, :placholder => :active, :style => "float: left" %>
+			</div>
 			<br/>
 			<%= submit_tag "Update", class: "button" %>
 		<% end %>
