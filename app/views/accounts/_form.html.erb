@@ -1,13 +1,11 @@
 <div class="partial">
 	<% @accounts.each do |a| %>
-		<%= link_to "Edit", "#{a.id}/edit", :class => "button", :style => "float:right"%>
+		<%= link_to "Edit", "/accounts/#{a.id}/edit", :class => "button", :style => "float:right; width: 4rem"%>
 		<h1><%= link_to "#{a.name.capitalize}", "/accounts/#{a.id}", :class => 'navigateToContact' %></h1>
 		<p><em>Name: </em><%= a.name %></p>
 		<p><em>Phone Number: </em><%= a.phone_number %></p>
 		<p><em>Active: </em><%= a.active %></p>
 		<p><em>Type: </em><%= a.account_type %></p>
-
-		<%= a.user_id %>
 		<hr/>
 	<% end %>
 </div>
