@@ -12,7 +12,6 @@ class AccountsController < ApplicationController
 		account = Account.new(account_params)
 		account.user_id = current_user.id
 		account.name = account_params[:name].capitalize
-
 		if account.valid?
 			account.save
 			redirect_to "/accounts"

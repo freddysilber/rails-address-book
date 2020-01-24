@@ -9,15 +9,12 @@ class ContactsController < ApplicationController
 	end
 
 	def create 
-		# raise contact_params
 		contact = Contact.new(contact_params)
-		# contact.user_id = current_user.id
 		contact.first_name = contact_params[:first_name].capitalize
 		contact.last_name = contact_params[:last_name].capitalize
 		if contact.valid?
 			contact.save
 			redirect_to '/contacts'
-
 		else
 			raise
 		end
