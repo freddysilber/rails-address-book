@@ -87,3 +87,9 @@ a.button:hover {
 hr {
 	border: .5px solid #666;
 }
+.contactsListContainer, .accountsListContainer {
+	height: 95vh;
+	overflow: auto;
+	border-right: 1px solid #666;
+	width: 30%;
+}
