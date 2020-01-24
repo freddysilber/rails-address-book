@@ -1,7 +1,3 @@
 class Contact < ApplicationRecord
-	belongs_to :user
-
-	# def self.capitalize_names(name)
-	# 	name.capitalize
-	# end
+	belongs_to :account
 end
