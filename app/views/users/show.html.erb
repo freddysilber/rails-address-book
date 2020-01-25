@@ -1,6 +1,10 @@
 <center>
 	<h1><em>Welcome <%= @user.username %>!</em></h1>
-	
-	<h1>User Id: <%= @user.id %></h1>
-	<h1>Password_digest: <%= @user.password_digest %></h1>
+	<div style="border: 1px solid #eee; border-radius: 10px; margin: .25rem; padding: .25rem">
+		<h1>My Accounts</h1>
+		<hr/>
+		<% @my_accounts.each do |a| %>
+			<%= render partial: "accounts/account", locals: {a: a} %>
+		<% end %>
+	</div>
 </center>
