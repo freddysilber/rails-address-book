@@ -4,4 +4,7 @@
 <p><em>Phone Number: </em><%= c.phone_number %></p>
 <p><em>Email: </em><%= c.email %></p>
 <p><em>Account: </em><%= link_to c.account.name, "/accounts/#{c.account.id}", :class => "navigateToRecord" %></p>
+
+<p><em>Parent Account: </em><%= c.account_id %></p>
+<p><em>Id: </em><%= c.id %></p>
 <hr/>
