@@ -110,3 +110,9 @@ hr {
 	transition: .5s;
 	text-decoration: underline;
 }
+.box {
+	border: 1px solid #666;
+	border-radius: 10px;
+	margin: .25rem;
+	padding: .25rem;
+}

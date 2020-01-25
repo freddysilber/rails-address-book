@@ -2,7 +2,7 @@
 	<%# SHOW CURRENT LOGGED IN USERNAME %>
 	<h1><em>Welcome <%= @user.username %>!</em></h1>
 	<%# SHOW ACCOUNTS I OWN %>
-	<div style="border: 1px solid #eee; border-radius: 10px; margin: .25rem; padding: .25rem">
+	<div class="box">
 		<h1>My Accounts</h1>
 		<hr/>
 		<% @my_accounts.each do |a| %>
@@ -10,7 +10,7 @@
 		<% end %>
 	</div>
 	<%# SHOW CONTACTS I OWN %>
-	<div style="border: 1px solid #eee; border-radius: 10px; margin: .25rem; padding: .25rem">
+	<div class="box">
 		<h1>My Contacts</h1>
 		<hr/>
 		<% @my_contacts.each do |c| %>
