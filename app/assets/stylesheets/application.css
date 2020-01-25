@@ -23,7 +23,7 @@
  	margin: .5rem;
  	padding: .5rem;
 	border-radius: 5px;
-	border: 1px solid #666; 
+	border: 1px solid #ff8533; 
 }
 select {
 	height: 2rem;
@@ -52,8 +52,8 @@ a.button {
 	float: left;
 	text-decoration: none;
 	background: #eee;
-	border: 1px solid #666;
-	color: #666
+	border: 1px solid #ff8533;
+	color: #ff8533
 }
 a.button:hover {
 	background: #ffa366;
@@ -92,12 +92,12 @@ a.button:hover {
 	background: white;
 }
 hr {
-	border: .5px solid #666;
+	border: .5px solid #ff8533;
 }
 .contactsListContainer, .accountsListContainer {
 	height: 95vh;
 	overflow: auto;
-	border-right: 1px solid #666;
+	border-right: 1px solid #ff8533;
 	width: 30%;
 }
 .navigateToRecord {
@@ -111,7 +111,7 @@ hr {
 	text-decoration: underline;
 }
 .box {
-	border: 1px solid #666;
+	border: 1px solid #ff8533;
 	border-radius: 10px;
 	margin: .25rem;
 	padding: .25rem;
