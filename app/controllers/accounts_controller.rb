@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
 	def index
-		@accounts = Account.all
+		# @accounts = Account.all
+		@accounts = Account.where(user_id: current_user.id)
 		@account = self.new
 	end
 
@@ -22,12 +23,16 @@ class AccountsController < ApplicationController
 
 	def show
 		@account = Account.find(params[:id])
-		render 'show'
+		if @account.user_id == current_user.id
+			render 'show'
+		end
 	end
-
+	
 	def edit
 		@account = Account.find(params[:id])
-		render 'edit'
+		if @account.user_id == current_user.id
+			render 'edit'
+		end
 	end
 
 	def update

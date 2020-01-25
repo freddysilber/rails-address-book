@@ -1,6 +1,12 @@
 class ContactsController < ApplicationController	
 	def index
-		@contacts = Contact.all
+		# @contacts = Contact.all
+		@contacts = []
+		Contact.all.each do |c|
+			if c.account.user_id == current_user.id
+				@contacts << c
+			end
+		end
 		@contact = self.new
 	end
 
@@ -22,12 +28,16 @@ class ContactsController < ApplicationController
 
 	def show
 		@contact = Contact.find(params[:id])
-		render 'show'
+		if @contact.account.user_id == current_user.id
+			render 'show'
+		end
 	end
-
+	
 	def edit
 		@contact = Contact.find(params[:id])
-		render 'edit'
+		if @contact.account.user_id == current_user.id
+			render 'edit'
+		end
 	end
 
 	def update
