@@ -1,6 +1,6 @@
 <%= form_for @contact do |c| %>
 	<center>
-		<%= c.collection_select :account_id, Account.all, :id, :name %>
+		<%= c.collection_select :account_id, Account.where(user_id: current_user.id), :id, :name %>
 		<br/>
 		<%= c.text_field :first_name, :placeholder => :first_name, :class => 'field' %>
 		<br/>
