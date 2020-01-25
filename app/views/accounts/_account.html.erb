@@ -1,6 +1,6 @@
 <h1><%= link_to "#{a.name.capitalize}", "/accounts/#{a.id}", :class => 'navigateToRecord' %></h1>
 <p><em>Name: </em><%= a.name %></p>
 <p><em>Phone Number: </em><%= a.phone_number %></p>
-<p><em>Active: </em><%= a.active %></p>
+<p><em>Active: </em><%= check_box_tag 'Active', a.active, a.active, disabled: true %></p>
 <p><em>Type: </em><%= a.account_type %></p>
 <hr/>
