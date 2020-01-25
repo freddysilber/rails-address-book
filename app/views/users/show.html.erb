@@ -8,7 +8,9 @@
 			<h1 class="title">My Accounts</h1>
 			<hr/>
 			<% @my_accounts.each do |a| %>
-				<%= render partial: "accounts/account", locals: {a: a} %>
+				<%# if a.user_id == current_user.id %>
+					<%= render partial: "accounts/account", locals: {a: a} %>
+				<%# end %>
 			<% end %>
 		</div>
 		<%# SHOW CONTACTS I OWN %>

@@ -38,6 +38,7 @@ class AccountsController < ApplicationController
 
 	def destroy
 		Account.find(params[:id]).destroy
+		# NEED TO DELETE ALL CHILDREN CONTACTS WHEN PARENT ACCOUNT IS DELETED
 		# Contact.find(params[:account_id]).destroy
 		redirect_to '/accounts'
 	end

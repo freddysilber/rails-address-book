@@ -1,4 +1,4 @@
-# require 'pry'
+require 'pry'
 class User < ApplicationRecord
 	has_secure_password
 	has_many :accounts
@@ -8,10 +8,10 @@ class User < ApplicationRecord
 		accounts = []
 		Account.all.each do |a|
 			if a.user_id == current_user_id
-				# binding.pry
 				accounts << a
 			end
 		end
+		accounts
 	end	
 
 	def self.my_contacts(current_user_id)
@@ -21,5 +21,6 @@ class User < ApplicationRecord
 				contacts << c
 			end
 		end
+		contacts
 	end
 end
