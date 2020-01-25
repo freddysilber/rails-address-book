@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find_by(id: current_user.id)
 		@my_accounts = User.my_accounts(current_user.id)
+		@my_contacts = User.my_contacts(current_user.id)
 		if current_user == @user
 			render 'show'
 		else 

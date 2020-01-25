@@ -11,4 +11,13 @@ class User < ApplicationRecord
 			end
 		end
 	end	
+
+	def self.my_contacts(current_user_id)
+		contacts = []
+		Contact.all.each do |c|
+			if c.account.user_id == current_user_id
+				contacts << c
+			end
+		end
+	end
 end
