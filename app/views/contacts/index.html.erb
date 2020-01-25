@@ -1,6 +1,6 @@
 <div class="indexContainer">
 	<div class="contactsListContainer">
-		<center><h1>My Contacts</h1></center>
+		<center><h1 class="title">My Contacts</h1></center>
 		<hr/>
 		<% @contacts.each do |c| %>
 			<%= render partial: "contacts/contact", locals: { c: c } %>
@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="indexNewForm">
-		<center><h1>New Contact</h1></center>
+		<center><h1 class="title">New Contact</h1></center>
 		<hr/>
 		<%= render "form" %>
 	</div>

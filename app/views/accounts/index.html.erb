@@ -1,6 +1,6 @@
 <div class="indexContainer">
 	<div class="accountsListContainer">
-		<center><h1>My Accounts</h1></center>
+		<center><h1 class="title">My Accounts</h1></center>
 		<hr/>
 		<% @accounts.each do |a| %>
 			<%= render partial: "accounts/account", locals: { a: a } %>
@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="indexNewForm">
-		<center><h1>New Account</h1></center>
+		<center><h1 class="title">New Account</h1></center>
 		<hr/>
 		<%= render "form" %>
 	</div>
