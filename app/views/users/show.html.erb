@@ -2,19 +2,21 @@
 	<%# SHOW CURRENT LOGGED IN USERNAME %>
 	<h1><em>Welcome <%= @user.username %>!</em></h1>
 	<%# SHOW ACCOUNTS I OWN %>
-	<div class="box">
-		<h1>My Accounts</h1>
-		<hr/>
-		<% @my_accounts.each do |a| %>
-			<%= render partial: "accounts/account", locals: {a: a} %>
-		<% end %>
-	</div>
-	<%# SHOW CONTACTS I OWN %>
-	<div class="box">
-		<h1>My Contacts</h1>
-		<hr/>
-		<% @my_contacts.each do |c| %>
-			<%= render partial: "contacts/contact", locals: {c: c} %>
-		<% end %>
+	<div style="display: flex; justify-content: space-evenly">
+		<div class="box">
+			<h1>My Accounts</h1>
+			<hr/>
+			<% @my_accounts.each do |a| %>
+				<%= render partial: "accounts/account", locals: {a: a} %>
+			<% end %>
+		</div>
+		<%# SHOW CONTACTS I OWN %>
+		<div class="box">
+			<h1>My Contacts</h1>
+			<hr/>
+			<% @my_contacts.each do |c| %>
+				<%= render partial: "contacts/contact", locals: {c: c} %>
+			<% end %>
+		</div>
 	</div>
 </center>
