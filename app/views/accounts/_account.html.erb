@@ -3,7 +3,9 @@
 <p><em>Phone Number: </em><%= a.phone_number %></p>
 <p><em>Active: </em><%= check_box_tag 'Active', a.active, a.active, disabled: true %></p>
 <p><em>Type: </em><%= a.account_type %></p>
+<p><em>Contacts Roll-up: </em><%= a.contacts.length %></p>
 
 <p><em>Owner: </em><%= a.user_id %></p>
 <p><em>Id: </em><%= a.id %></p>
+
 <hr/>

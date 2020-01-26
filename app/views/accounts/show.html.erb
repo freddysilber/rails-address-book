@@ -10,7 +10,7 @@
 <%# SHHOW CHILD CONTACTS LIST %>
 <div style="display: inline">
 	<%= link_to "New Contact", "/accounts/#{@account.id}/contacts/new", :class => "button", :style => "float: right" %>
-	<h1 class="title">Related Contacts</h1>
+	<h1 class="title">Related Contacts: <%= @account.contacts.length %></h1>
 </div>
 <hr/>
 <div style="display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap;">
