@@ -2,15 +2,24 @@
 	<%# SHOW CURRENT LOGGED IN USERNAME %>
 	<h1 class="title"><em>Welcome <%= @user.username %>!</em></h1>
 	<h1 class="title"><em>User Id: <%= @user.id %></em></h1>
+
+	<%# <div> %>
+		<%# @my_accounts.each do |a| %>
+			<%#= render partial: "accounts/account", locals: {a: a} %>
+			<%# <hr/> %>
+			<%# a.contacts.all.each do |c| %>
+				<%#= render partial: "contacts/contact", locals: {c: c} %>
+			<%# end %>
+		<%# end %>
+	<%# </div> %>
+
 	<%# SHOW ACCOUNTS I OWN %>
 	<div style="display: flex; justify-content: space-evenly">
 		<div class="box">
 			<h1 class="title">My Accounts</h1>
 			<hr/>
 			<% @my_accounts.each do |a| %>
-				<%# if a.user_id == current_user.id %>
-					<%= render partial: "accounts/account", locals: {a: a} %>
-				<%# end %>
+				<%= render partial: "accounts/account", locals: {a: a} %>
 			<% end %>
 		</div>
 		<%# SHOW CONTACTS I OWN %>
