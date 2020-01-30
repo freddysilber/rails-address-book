@@ -1,13 +1,18 @@
 <%= form_for @contact do |c| %>
 	<center>
+		<%= label_tag(:account_id) %>
 		<%= c.collection_select :account_id, Account.where(user_id: current_user.id), :id, :name %>
 		<br/>
+		<%= label_tag(:first_name) %>
 		<%= c.text_field :first_name, :placeholder => :first_name, :class => 'field' %>
 		<br/>
+		<%= label_tag(:last_name) %>
 		<%= c.text_field :last_name, :placeholder => :last_name, :class => 'field' %>
 		<br/>
+		<%= label_tag(:phone_number) %>
 		<%= c.number_field :phone_number, :placeholder => :phone_number, :class => 'field' %>
 		<br/>
+		<%= label_tag(:email) %>
 		<%= c.text_field :email, :placeholder => :email, :class => 'field' %>
 		<br/>
 		<%= c.submit 'Save', :class => 'button' %>

@@ -1,15 +1,18 @@
 <%= form_for @account do |a| %>
 	<center>
+		<%= label_tag(:name) %>
 		<%= a.text_field :name, :placeholder => :name, :class => 'field' %>
 		<br/>
+		<%= label_tag(:phone_number) %>
 		<%= a.number_field :phone_number, :placeholder => :phone_number, :class => 'field' %>
+		<br/>
+		<%= label_tag(:account_type) %>
+		<%= a.text_field :account_type, :placeholder => :account_type, :class => 'field' %>
 		<br/>
 		<div class="field">
 			<%= label_tag(:active) %>
 			<%= a.check_box :active, :placeholder => :active, :style => "float: left" %>
 		</div>
-		<%= a.text_field :account_type, :placeholder => :account_type, :class => 'field' %>
-		<br/>
 		<%= a.submit 'Save', :class => 'button' %>
 	</center>
 <% end %>

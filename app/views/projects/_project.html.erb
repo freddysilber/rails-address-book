@@ -1,1 +1,9 @@
-<h1>project project partal</h1>
+<h1><%= link_to "#{p.project_name.capitalize}", "/projects/#{p.id}", :class => "navigateToRecord" %></h1>
+<p><em>Project Name: </em><%= p.project_name %></p>
+<p><em>Complete: </em><%= check_box_tag 'Complete', p.complete, p.complete, disabled: true %></p>
+<p><em>Parent Account: </em><%= p.account.name %></p>
+<p><em>Owner: </em><%= p.owner %></p>
+
+<p><em>Parent Account: </em><%= p.account.id %></p>
+<p><em>Id: </em><%= p.id %></p>
+<hr/>
