@@ -91,7 +91,7 @@ a.button:hover {
 hr {
 	border: .5px solid #ff8533;
 }
-.contactsListContainer, .accountsListContainer {
+.recordListContainer {
 	height: 95vh;
 	overflow: auto;
 	border-right: 1px solid #ff8533;

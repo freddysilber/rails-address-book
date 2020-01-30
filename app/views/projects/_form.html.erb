@@ -1,1 +1,8 @@
-<h1>Project form</h1>
+<%= form_for @project do |p| %>
+	<center>
+		<%= p.text_field :project_name %>
+		<br/>
+
+		<%= p.submit 'Save', :class => 'button' %>
+	</center>
+<% end %>

@@ -1,1 +1,9 @@
-<h1>index project</h1>
+<div class="indexContainer">
+	<div class="recordListContainer">
+		<center><h1 class="title">Projects</h1></center>
+		<hr/>
+		<% @projects.each do |p| %>
+			<%= render partial: "projects/project", locals: { p: p } %>
+		<% end %>
+	</div>
+</div>
