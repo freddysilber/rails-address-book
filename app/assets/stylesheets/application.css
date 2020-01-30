@@ -84,13 +84,6 @@ a.button:hover {
 	text-align: center;
 	border-left: 1px solid #666;
 }
-.navButton:last-child {
-	border-right: 1px solid #666;
-	transition: .5s;
-}
-.navButton:not(:last-of-type) {
-	border: 1px solid dodgerblue;
-}
 .navButton:hover {
 	color: #ff8533;
 	background: white;
