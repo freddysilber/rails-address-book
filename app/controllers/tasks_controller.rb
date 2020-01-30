@@ -19,7 +19,7 @@ class TasksController < ApplicationController
 			task.save
 			redirect_to '/tasks'
 		else
-			raise
+			raise task_params
 		end
 	end
 

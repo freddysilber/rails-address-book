@@ -7,13 +7,13 @@
 		<%= t.collection_select :project_id, Project.all, :id, :project_name %>
 		<br/>
 		<%= label_tag(:status) %>
-		<%# <%= t.collection_select :status %> %>
+		<%= t.select :status, options_for_select(["Open", "In Progress", "Closed"]), :class => 'field' %>
 		<br/>
 		<%= label_tag(:start_date) %>
-		<%= t.text_field :start_date, date: {provide: 'datepicker'}, :class => 'field' %>
+		<%= t.date_select :start_date, :placeholder => :start_date, :class => 'field' %>
 		<br/>
 		<%= label_tag(:end_date) %>
-		<%= t.text_field :end_date, date: {provide: 'datepicker'}, :class => 'field' %>
+		<%= t.date_select :end_date, :placeholder => :end_date, :class => 'field' %>
 		<br/>
 		<div class="field">
 			<%= label_tag(:complete) %>
