@@ -1,1 +1,9 @@
-<h1>task _form</h1>
+<%= form_for @task do |t| %>
+	<center>
+		<%= label_tag(:task_name) %>
+		<%=t.text_field :task_name, :placeholder => :task_name, :class => 'field' %>
+		<br/>
+
+		<%= t.submit 'Save', :class => 'button' %>
+	</center>
+<% end %>

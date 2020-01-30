@@ -1,1 +1,10 @@
-<h1>task edit</h1>
+<center>
+	<%= link_to "Back", task_path, :class => "button" %>
+	<br/>
+	<hr/>
+	<br/>
+	<div>
+		<h1 class="title">Edit Task: <%= @task.task_name %></h1>
+		<%= render "form" %>
+	</div>
+</center>

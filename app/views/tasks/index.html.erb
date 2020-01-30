@@ -1,1 +1,15 @@
-<p>task index</p>
+<div class="indexContainer">
+	<div class="recordListContainer">
+		<center><h1 class="title">Tasks</h1></center>
+		<hr/>
+		<% @tasks.each do |t| %>
+			<%= render partial: "tasks/task", locals: { t: t } %>
+		<% end %>
+	</div>
+
+	<div class="indexNewForm">
+		<center><h1 class="title">New Task</h1></center>
+		<hr/>
+		<%= render "form" %>
+	</div>
+</div>
