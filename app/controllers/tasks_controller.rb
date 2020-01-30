@@ -1,4 +1,9 @@
 class TasksController < ApplicationController
+	TASK_STATUS = [
+		'Open',
+		'In Progress',
+		'Complete'
+	]
 	def index
 		@tasks = Task.all
 	end
