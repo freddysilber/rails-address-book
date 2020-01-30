@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects
+  resources :tasks
 
   get '/signin' => 'sessions#new'
 	get '/logout' => 'sessions#destroy'
