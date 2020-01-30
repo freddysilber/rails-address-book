@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_034634) do
+ActiveRecord::Schema.define(version: 2020_01_30_165622) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "account_type"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2020_01_24_034634) do
     t.string "last_name"
     t.integer "phone_number"
     t.integer "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "project_name"
+    t.boolean "complete"
+    t.integer "account_id"
+    t.integer "owner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

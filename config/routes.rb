@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :contacts
   end
 
+  resources :projects
+
   get '/signin' => 'sessions#new'
 	get '/logout' => 'sessions#destroy'
   post '/signin' => 'sessions#create'
