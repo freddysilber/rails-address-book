@@ -3,6 +3,7 @@ class User < ApplicationRecord
 	has_secure_password
 	has_many :accounts
 	has_many :contacts, through: :accounts
+	has_many :projects, through: :accounts
 	# GET ALL ACCOUNTS BY CURRENT USER
 	def self.my_accounts(current_user_id)
 		accounts = []

@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_01_30_165622) do
 
   create_table "accounts", force: :cascade do |t|
+    t.string "name"
     t.string "account_type"
     t.boolean "active"
-    t.string "name"
     t.integer "phone_number"
     t.integer "user_id"
     t.datetime "created_at", null: false
