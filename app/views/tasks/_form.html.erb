@@ -10,10 +10,10 @@
 		<%= t.select :status, options_for_select(["Open", "In Progress", "Closed"]), :class => 'field' %>
 		<br/>
 		<%= label_tag(:start_date) %>
-		<%= t.date_select :start_date, :placeholder => :start_date, :class => 'field' %>
+		<%= date_field(:start_date, :start_date, class: 'field') %>
 		<br/>
 		<%= label_tag(:end_date) %>
-		<%= t.date_select :end_date, :placeholder => :end_date, :class => 'field' %>
+		<%= date_field(:end_date, :end_date, class: 'field') %>
 		<br/>
 		<div class="field">
 			<%= label_tag(:complete) %>

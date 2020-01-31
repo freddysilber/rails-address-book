@@ -14,13 +14,19 @@ class TasksController < ApplicationController
 
 	def create
 		task = Task.new(task_params)
-		task.task_name = task_params[:task_name].capitalize
-		if task.valid?
-			task.save
-			redirect_to '/tasks'
-		else
-			raise task_params
-		end
+		task.save
+		redirect_to '/tasks'
+		# raise task_params
+		# task_params[:'start_date(1i)'] => "2020"
+
+		# task = Task.new(task_params)
+		# task.task_name = task_params[:task_name].capitalize
+		# if task.valid?
+		# 	task.save
+		# 	redirect_to '/tasks'
+		# else
+		# 	raise
+		# end
 	end
 
 	def show
@@ -51,8 +57,8 @@ class TasksController < ApplicationController
 			:project_id,
 			:complete,
 			:status,
-			:start_date,
-			:end_date
+			# :start_date,
+			# :end_date
 		)
 	end
 end

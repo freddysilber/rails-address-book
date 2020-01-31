@@ -1,13 +1,13 @@
 class Task < ApplicationRecord
 	belongs_to :project
 
-	TASK_STATUS = [
-		'Open',
-		'In Progress',
-		'Complete'
-	]
+	# TASK_STATUS = [
+	# 	'Open',
+	# 	'In Progress',
+	# 	'Complete'
+	# ]
 
-	def self.task_statuses
-		TASK_STATUS
-	end
+	# def self.task_statuses
+	# 	TASK_STATUS
+	# end
 end
