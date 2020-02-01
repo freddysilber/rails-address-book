@@ -10,23 +10,18 @@ class TasksController < ApplicationController
 
 	def create
 		task = Task.new(task_params)
-		task.save
-		redirect_to '/tasks'
-		# raise task_params
-		# task_params[:'start_date(1i)'] => "2020"
-
-		# task = Task.new(task_params)
-		# task.task_name = task_params[:task_name].capitalize
-		# if task.valid?
-		# 	task.save
-		# 	redirect_to '/tasks'
-		# else
-		# 	raise
-		# end
+		task.task_name = task_params[:task_name].capitalize
+		if task.valid?
+			task.save
+			redirect_to '/tasks'
+		else
+			raise
+		end
 	end
 
 	def show
 		@task = Task.find(params[:id])
+		raise @task
 		# if @task.project.account.user_id == current_user.id
 			render 'show'
 		# end
