@@ -1,6 +1,7 @@
 <h1><%= link_to "#{t.task_name.capitalize}", "/tasks/#{t.id}", :class => "navigateToRecord" %></h1>
-<p><em>Project Name: </em><%= t.task_name %></p>
+<p><em>Task Name: </em><%= t.task_name %></p>
+<p><em>Project Name: </em><%= t.project.project_name %></p>
 
-<p><em>Parent Project: </em><%= t.project.id %></p>
+<p><em>Parent Project: </em><%= t.project_id %></p>
 <p><em>Id: </em><%= t.id %></p>
 <hr/>

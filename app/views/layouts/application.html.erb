@@ -11,6 +11,7 @@
     <div class="masterOuter">
       <% if logged_in? %>
         <div class="navigationBar">
+          <%= link_to "Tasks", "/tasks", :class => 'navButton' %>
           <%= link_to "Projects", "/projects", :class => 'navButton' %>
           <%= link_to "My Accounts", "/accounts", :class => 'navButton' %>
           <%= link_to "My Contacts", "/contacts", :class => 'navButton' %>

@@ -1,11 +1,7 @@
 class TasksController < ApplicationController
-	TASK_STATUS = [
-		'Open',
-		'In Progress',
-		'Complete'
-	]
 	def index
 		@tasks = Task.all
+		@task = self.new
 	end
 
 	def new
@@ -31,9 +27,9 @@ class TasksController < ApplicationController
 
 	def show
 		@task = Task.find(params[:id])
-		if @task.project.account.user_id == current_user.id
+		# if @task.project.account.user_id == current_user.id
 			render 'show'
-		end
+		# end
 	end
 
 	def edit
@@ -57,8 +53,8 @@ class TasksController < ApplicationController
 			:project_id,
 			:complete,
 			:status,
-			# :start_date,
-			# :end_date
+			:start_date,
+			:end_date
 		)
 	end
 end
