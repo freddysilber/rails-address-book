@@ -25,23 +25,23 @@ class User < ApplicationRecord
 		contacts
 	end
 	# GET ALL PROJECTS BY CURRENT USER
-	def self.my_projects
-		projects = []
-		Project.all.each do |p|
-			if p.account.user_id == current_user_id
-				projects << p
-			end
-		end
-		projects
-	end
+	# def self.my_projects
+	# 	projects = []
+	# 	Project.all.each do |p|
+	# 		if p.account.user_id == current_user_id
+	# 			projects << p
+	# 		end
+	# 	end
+	# 	projects
+	# end
 	# GET ALL TASKS BY CURRENT USER
-	def self.my_tasks
-		tasks = []
-		Task.all.each do |t|
-			if t.project.account.user_id == current_user_id
-				tasks << t
-			end
-		end
-		tasks
-	end
+	# def self.my_tasks
+	# 	tasks = []
+	# 	Task.all.each do |t|
+	# 		if t.project.account.user_id == current_user_id
+	# 			tasks << t
+	# 		end
+	# 	end
+	# 	tasks
+	# end
 end
