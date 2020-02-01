@@ -27,6 +27,12 @@ class ProjectsController < ApplicationController
 
 	def show
 		@project = Project.find(params[:id])
+		@tasks = []
+		Task.all.each do |t|
+			if t.project_id == @project.id
+				@tasks << t
+			end
+		end
 		if @project.account.user_id == current_user.id
 			render 'show'
 		end
