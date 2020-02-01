@@ -21,10 +21,9 @@ class TasksController < ApplicationController
 
 	def show
 		@task = Task.find(params[:id])
-		raise @task
-		# if @task.project.account.user_id == current_user.id
+		if @task.project.account.user_id == current_user.id
 			render 'show'
-		# end
+		end
 	end
 
 	def edit
