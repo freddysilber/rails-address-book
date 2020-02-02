@@ -24,6 +24,11 @@ class User < ApplicationRecord
 		end
 		contacts
 	end
+
+	# def self.myContacts(current_user_id)
+	# 	where(Contact.account.user_id == current_user_id)
+	# end
+
 	# GET ALL PROJECTS BY CURRENT USER
 	# def self.my_projects
 	# 	projects = []
