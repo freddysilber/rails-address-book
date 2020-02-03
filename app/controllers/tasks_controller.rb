@@ -33,8 +33,11 @@ class TasksController < ApplicationController
 	end	
 
 	def update
-		@task.update(task_params)
-		redirect_to task_path(@task)
+		if @task.update(task_params)
+			redirect_to task_path(@task)
+		else
+			render :edit
+		end
 	end
 
 	def destroy

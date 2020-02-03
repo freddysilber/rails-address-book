@@ -32,12 +32,7 @@ class AccountsController < ApplicationController
 			render 'edit'
 		end
 	end
-
-	# def update
-	# 	@account.update(account_params)
-	# 	redirect_to account_path(@account)
-	# end
-
+	
 	def update
 		if @account.update(account_params)
 			redirect_to account_path(@account)
