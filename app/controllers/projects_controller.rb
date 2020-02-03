@@ -52,10 +52,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def destroy
-		# Project.find(params[:id]).destroy
-		project = Project.find(params[:id])
-		project.tasks.destroy
-		project.destroy
+		Project.find(params[:id]).destroy
 		redirect_to '/projects'
 	end
 

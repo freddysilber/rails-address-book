@@ -43,11 +43,7 @@ class AccountsController < ApplicationController
 	end
 
 	def destroy
-		account = Account.find(params[:id])
-		account.tasks.destroy
-		account.projects.destroy
-		account.contacts.destroy
-		account.destroy
+		Account.find(params[:id]).destroy
 		redirect_to '/accounts'
 	end
 
