@@ -17,13 +17,12 @@ class ProjectsController < ApplicationController
 
 
 	def create
-		project = Project.new(project_params)
-		project.project_name = project_params[:project_name].capitalize
-		if project.valid?
-			project.save
-			redirect_to '/projects'
+		@project = Project.new(project_params)
+		@project.project_name = project_params[:project_name].capitalize
+		if @project.save
+			redirect_to project_path(@project)
 		else
-			raise
+			render :new
 		end
 	end
 

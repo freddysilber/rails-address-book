@@ -1,4 +1,3 @@
-require 'pry'
 class AccountsController < ApplicationController
 	before_action :set_account!, only: [:show, :edit, :update]
 
@@ -12,14 +11,13 @@ class AccountsController < ApplicationController
 	end
 
 	def create
-		account = Account.new(account_params)
-		account.user_id = current_user.id
-		account.name = account_params[:name].capitalize
-		if account.valid?
-			account.save
-			redirect_to "/accounts"
+		@account = Account.new(account_params)
+		@account.user_id = current_user.id
+		@account.name = account_params[:name].capitalize
+		if @account.save
+			redirect_to account_path(@account)
 		else
-			raise
+			render :new
 		end
 	end
 

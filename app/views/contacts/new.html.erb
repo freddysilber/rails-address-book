@@ -4,7 +4,7 @@
 			<h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 			<ul>
 				<% @contact.errors.full_messages.each do |msg| %>
-				<li style="color: white"><%= msg %></li>
+				<li style="color: red"><%= msg %></li>
 				<% end %>
 			</ul>
 		</div>

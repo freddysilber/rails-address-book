@@ -1,4 +1,16 @@
 <center>
+	<% if @account.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
+			<ul>
+				<% @account.errors.full_messages.each do |msg| %>
+				<li style="color: red"><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<hr/>
+	
 	<h1 class="title">New Account</h1>
 	<hr/>
 	<%= render "form" %>

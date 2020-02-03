@@ -1,5 +1,17 @@
 <%= link_to "Back", accounts_path, :class => "button" %>
 <center>
+	<% if @project.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+			<ul>
+				<% @project.errors.full_messages.each do |msg| %>
+				<li style="color: red"><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<hr/>
+	
 	<h1 class="title">New Project</h1>
 	<hr/>
 	<%= render "form" %>

@@ -11,13 +11,12 @@ class TasksController < ApplicationController
 	end
 
 	def create
-		task = Task.new(task_params)
-		task.task_name = task_params[:task_name].capitalize
-		if task.valid?
-			task.save
-			redirect_to '/tasks'
+		@task = Task.new(task_params)
+		@task.task_name = task_params[:task_name].capitalize
+		if @task.save
+			redirect_to task_path(@task)
 		else
-			raise
+			render :new
 		end
 	end
 
