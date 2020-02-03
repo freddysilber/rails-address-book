@@ -1,9 +1,9 @@
 require 'pry'
 class User < ApplicationRecord
 	has_secure_password
-	has_many :accounts
-	has_many :contacts, through: :accounts
-	has_many :projects, through: :accounts
+	has_many :accounts, :dependent => :destroy
+	has_many :contacts, through: :accounts, :dependent => :destroy
+	has_many :projects, through: :accounts, :dependent => :destroy
 	# GET ALL ACCOUNTS BY CURRENT USER
 	def self.my_accounts(current_user_id)
 		accounts = []
@@ -24,29 +24,4 @@ class User < ApplicationRecord
 		end
 		contacts
 	end
-
-	# def self.myContacts(current_user_id)
-	# 	where(Contact.account.user_id == current_user_id)
-	# end
-
-	# GET ALL PROJECTS BY CURRENT USER
-	# def self.my_projects
-	# 	projects = []
-	# 	Project.all.each do |p|
-	# 		if p.account.user_id == current_user_id
-	# 			projects << p
-	# 		end
-	# 	end
-	# 	projects
-	# end
-	# GET ALL TASKS BY CURRENT USER
-	# def self.my_tasks
-	# 	tasks = []
-	# 	Task.all.each do |t|
-	# 		if t.project.account.user_id == current_user_id
-	# 			tasks << t
-	# 		end
-	# 	end
-	# 	tasks
-	# end
 end
