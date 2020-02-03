@@ -16,14 +16,13 @@ class ContactsController < ApplicationController
 	end
 
 	def create 
-		contact = Contact.new(contact_params)
-		contact.first_name = contact_params[:first_name].capitalize
-		contact.last_name = contact_params[:last_name].capitalize
-		if contact.valid?
-			contact.save
-			redirect_to '/contacts'
+		@contact = Contact.new(contact_params)
+		@contact.first_name = contact_params[:first_name].capitalize
+		@contact.last_name = contact_params[:last_name].capitalize
+		if @contact.save
+			redirect_to contact_path(@contact)
 		else
-			raise
+			render :new
 		end
 	end
 

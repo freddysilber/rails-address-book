@@ -1,4 +1,16 @@
 <center>
+	<% if @contact.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+			<ul>
+				<% @contact.errors.full_messages.each do |msg| %>
+				<li style="color: white"><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<hr/>
+	
 	<h1 class="title">New Contact</h1>
 	<hr/>
 	<%= render "form" %>
