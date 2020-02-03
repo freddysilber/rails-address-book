@@ -1,4 +1,8 @@
 <center>
+	<% if @contact.errors.any? %>
+		<%= render partial: "layouts/errors", locals: { r: @contact } %>
+	<% end %>
+
 	<%= link_to "Back", contact_path, :class => "button" %>
 	<br/>
 	<hr/>

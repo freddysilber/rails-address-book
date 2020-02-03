@@ -33,9 +33,17 @@ class AccountsController < ApplicationController
 		end
 	end
 
+	# def update
+	# 	@account.update(account_params)
+	# 	redirect_to account_path(@account)
+	# end
+
 	def update
-		@account.update(account_params)
-		redirect_to account_path(@account)
+		if @account.update(account_params)
+			redirect_to account_path(@account)
+		else
+			render :edit
+		end
 	end
 
 	def destroy
