@@ -1,6 +1,6 @@
 <h1><%= link_to "#{p.project_name.capitalize}", "/projects/#{p.id}", :class => "navigateToRecord" %></h1>
 <p><em>Project Name: </em><%= p.project_name %></p>
 <p><em>Complete: </em><%= check_box_tag 'Complete', p.complete, p.complete, disabled: true %></p>
-<p><em>Parent Account: </em><%= p.account.name %></p>
+<p><em>Account: </em><%= link_to p.account.name, "/accounts/#{p.account.id}", :class => "navigateToRecord" %></p>
 <p><em>Owner: </em><%= p.owner %></p>
 <hr/>
