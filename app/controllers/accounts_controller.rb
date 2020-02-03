@@ -1,3 +1,4 @@
+require 'pry'
 class AccountsController < ApplicationController
 	def index
 		# @accounts = Account.all
@@ -42,14 +43,11 @@ class AccountsController < ApplicationController
 	end
 
 	def destroy
-		Account.find(params[:id]).destroy
-		# account = Account.find(params[:id])
-		# contacts = account.contacts
-		# account.destroy
-		# contacts.destroy
-
-		# NEED TO DELETE ALL CHILDREN CONTACTS WHEN PARENT ACCOUNT IS DELETED
-		# Contact.find(params[:account_id]).destroy
+		account = Account.find(params[:id])
+		account.tasks.destroy
+		account.projects.destroy
+		account.contacts.destroy
+		account.destroy
 		redirect_to '/accounts'
 	end
 

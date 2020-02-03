@@ -1,6 +1,5 @@
 class ContactsController < ApplicationController	
 	def index
-		# @contacts = Contact.all
 		@contacts = []
 		Contact.all.each do |c|
 			if c.account.user_id == current_user.id

@@ -7,9 +7,9 @@
 	<br/>
 	<%= render partial: "accounts/account", locals: { a: @account } %>
 </center>
-<%# SHHOW CHILD CONTACTS LIST %>
+<%# SHOW RELATED CONTACTS LIST %>
 <div style="display: inline">
-	<%= link_to "New Project", "/projects/new", :class => "button", :style => "float: right" %>
+	<%#= link_to "New Project", "/projects/new", :class => "button", :style => "float: right" %>
 	<%= link_to "New Contact", "/accounts/#{@account.id}/contacts/new", :class => "button", :style => "float: right" %>
 	<h1 class="title">Related Contacts: <%= @account.contacts.length %></h1>
 </div>
@@ -18,6 +18,21 @@
 	<% @account.contacts.each do |c| %>
 		<div style="width: 25%">
 			<%= render partial: "contacts/contact", locals: {c: c} %>
+		</div>
+	<% end %>
+</div>
+<%# SHOW RELATED PROJECTS LIST %>
+<hr/>
+<div style="display: inline">
+	<%= link_to "New Project", "/projects/new", :class => "button", :style => "float: right" %>
+	<%#= link_to "New Contact", "/accounts/#{@account.id}/contacts/new", :class => "button", :style => "float: right" %>
+	<h1 class="title">Related Projects: <%= @account.projects.length %></h1>
+</div>
+<hr/>
+<div style="display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap;">
+	<% @account.projects.each do |p| %>
+		<div style="width: 25%">
+			<%= render partial: "projects/project", locals: {p: p} %>
 		</div>
 	<% end %>
 </div>
