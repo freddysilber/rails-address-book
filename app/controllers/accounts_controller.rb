@@ -1,7 +1,8 @@
 require 'pry'
 class AccountsController < ApplicationController
+	before_action :set_account!, only: [:show, :edit, :update]
+
 	def index
-		# @accounts = Account.all
 		@accounts = Account.where(user_id: current_user.id)
 		@account = self.new
 	end
@@ -23,21 +24,18 @@ class AccountsController < ApplicationController
 	end
 
 	def show
-		@account = Account.find(params[:id])
 		if @account.user_id == current_user.id
 			render 'show'
 		end
 	end
 	
 	def edit
-		@account = Account.find(params[:id])
 		if @account.user_id == current_user.id
 			render 'edit'
 		end
 	end
 
 	def update
-		@account = Account.find(params[:id])
 		@account.update(account_params)
 		redirect_to account_path(@account)
 	end
@@ -57,5 +55,9 @@ class AccountsController < ApplicationController
 			:phone_number,
 			:user_id
 		)
+	end
+
+	def set_account!
+		@account = Account.find(params[:id])
 	end
 end

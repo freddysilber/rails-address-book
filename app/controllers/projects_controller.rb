@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+	before_action :set_project!, only: [:show, :edit, :update]
+
 	def index
 		@projects = []
 		Project.all.each do |p|
@@ -26,7 +28,6 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@project = Project.find(params[:id])
 		@tasks = []
 		Task.all.each do |t|
 			if t.project_id == @project.id
@@ -39,14 +40,12 @@ class ProjectsController < ApplicationController
 	end
 
 	def edit
-		@project = Project.find(params[:id])
 		if @project.account.user_id == current_user.id
 			render 'edit'
 		end
 	end
 
 	def update
-		@project = Project.find(params[:id])
 		@project.update(project_params)
 		redirect_to project_path(@project)
 	end
@@ -65,5 +64,9 @@ class ProjectsController < ApplicationController
 			:owner,
 			:complete
 		)
+	end
+
+	def set_project!
+		@project = Project.find(params[:id])
 	end
 end

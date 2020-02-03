@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+	before_action :set_task!, only: [:show, :edit, :update]
+
 	def index
 		@tasks = Task.all
 		@task = self.new
@@ -20,21 +22,18 @@ class TasksController < ApplicationController
 	end
 
 	def show
-		@task = Task.find(params[:id])
 		if @task.project.account.user_id == current_user.id
 			render 'show'
 		end
 	end
 
 	def edit
-		@task = Task.find(params[:id])
 		if @task.project.account.user_id == current_user.id
 			render 'edit'
 		end
 	end	
 
 	def update
-		@task = Task.find(params[:id])
 		@task.update(task_params)
 		redirect_to task_path(@task)
 	end
@@ -55,5 +54,9 @@ class TasksController < ApplicationController
 			:start_date,
 			:end_date
 		)
+	end
+
+	def set_task!
+		@task = Task.find(params[:id])
 	end
 end

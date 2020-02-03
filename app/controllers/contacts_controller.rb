@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController	
+	before_action :set_contact!, only: [:show, :edit, :update]
+
 	def index
 		@contacts = []
 		Contact.all.each do |c|
@@ -26,21 +28,18 @@ class ContactsController < ApplicationController
 	end
 
 	def show
-		@contact = Contact.find(params[:id])
 		if @contact.account.user_id == current_user.id
 			render 'show'
 		end
 	end
 	
 	def edit
-		@contact = Contact.find(params[:id])
 		if @contact.account.user_id == current_user.id
 			render 'edit'
 		end
 	end
 
 	def update
-		@contact = Contact.find(params[:id])
 		@contact.update(contact_params)
 		redirect_to contact_path(@contact)
 	end
@@ -61,4 +60,8 @@ class ContactsController < ApplicationController
 			:phone_number
 		)
   	end
+
+	def set_contact!
+		@contact = Contact.find(params[:id])
+	end
 end
