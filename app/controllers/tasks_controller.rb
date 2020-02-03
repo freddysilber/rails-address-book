@@ -12,7 +12,6 @@ class TasksController < ApplicationController
 
 	def create
 		@task = Task.new(task_params)
-		@task.task_name = task_params[:task_name].capitalize
 		if @task.save
 			redirect_to task_path(@task)
 		else

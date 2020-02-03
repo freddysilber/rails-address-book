@@ -13,7 +13,6 @@ class AccountsController < ApplicationController
 	def create
 		@account = Account.new(account_params)
 		@account.user_id = current_user.id
-		@account.name = account_params[:name].capitalize
 		if @account.save
 			redirect_to account_path(@account)
 		else
