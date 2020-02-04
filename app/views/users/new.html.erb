@@ -1,4 +1,9 @@
 <center>
+<% if @user.errors.any? %>
+	<%= render partial: "layouts/errors", locals: { r: @user } %>
+<% end %>
+<hr/>
+
 <%= link_to "Back", root_path, :class => 'button' %>
 <br/>
 <hr/>

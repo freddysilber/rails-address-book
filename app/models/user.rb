@@ -1,5 +1,7 @@
 require 'pry'
 class User < ApplicationRecord
+	validates :username, uniqueness: true
+	validates :username, presence: true
 	has_secure_password
 	has_many :accounts, :dependent => :destroy
 	has_many :contacts, through: :accounts, :dependent => :destroy

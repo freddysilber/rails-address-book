@@ -1,18 +1,18 @@
 <center>
-<%= link_to "Back", root_path, :class => 'button'%>
-<br/>
-<hr/>
-<br/>
-	<div>
-		<%= form_tag(controller: "sessions", action: "create", method: "post") do %>
-			<h1>Log In</h1>
-			<%= label_tag(:username)%>
-			<%= text_field_tag :username, nil, class: 'field' %>
-			<br />
-			<%= label_tag("Password") %>
-			<%= password_field_tag :password, nil, class: 'field' %><br/>
-			<br />
-			<%= submit_tag("Log in", :class => "button") %>
-		<% end %>
-	</div>
+	<%= link_to "Back", root_path, :class => 'button'%>
+	<br/>
+	<hr/>
+	<br/>
+		<div>
+			<%= form_tag(controller: "sessions", action: "create", method: "post") do %>
+				<h1>Log In</h1>
+				<%= label_tag(:username)%>
+				<%= text_field_tag :username, nil, class: 'field' %>
+				<br />
+				<%= label_tag("Password") %>
+				<%= password_field_tag :password, nil, class: 'field' %><br/>
+				<br />
+				<%= submit_tag("Log in", :class => "button") %>
+			<% end %>
+		</div>
 </center>
