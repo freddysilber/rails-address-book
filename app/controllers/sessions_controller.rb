@@ -1,32 +1,26 @@
+require 'securerandom'
 class SessionsController < ApplicationController
 	def create
 		if auth_hash = request.env["omniauth.auth"]
 			#logged in wit guthub
-
-			# raise auth_hash.inspect
-			# request.env["omniauth.auth"]["email"]
-
-			# user = User.find_by(:username => params[:username])
-			oauth_username = request.env["omniauth.auth"].info.nickname
-			# raise oauth_username.inspect
-			# raise request.env["omniauth.auth"].inspect
+			oauth_username = request.env["omniauth.auth"]["info"]["nickname"]
 			if user = User.find_by(:username => oauth_username)
 			# THIS user exist just log them in
 				session[:user_id] = user.id
 				redirect_to "/users/#{user.id}"
 			else
+				user_password = SecureRandom.hex
 				# I know who the person is but this is the first time theyve come to our application
-				user = User.new(:username => oauth_username)
-				# raise user.inspect
-				if user.save
-					session[:user_id] = user.id
-					redirect_to "/users/#{user.id}"
+				@user = User.new(:username => oauth_username, :password => user_password)
+				if @user.save
+					session[:user_id] = @user.id
+					redirect_to "/users/#{@user.id}"
 				else
-					raise user.errors.full_messages
+					raise @user.errors.full_messages
+					render 'sessions/new'
 				end
 			end
 		else
-			# normal login w/ username and password
 			user = User.find_by(:username => params[:username])
 			if user && user.authenticate(params[:password])
 				session[:user_id] = user.id
@@ -35,11 +29,6 @@ class SessionsController < ApplicationController
 				render 'sessions/new'
 			end
 		end
-
-		# user = User.find_by(params[:id])
-		# return head(:forbidden) unless user.authenticate(params[:password])
-		# session[:user_id] = user.id
-		# redirect_to "/users/#{user.id}"
 	end
 
 	def destroy
