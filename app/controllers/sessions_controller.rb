@@ -2,21 +2,17 @@ require 'securerandom'
 class SessionsController < ApplicationController
 	def create
 		if auth_hash = request.env["omniauth.auth"]
-			#logged in wit guthub
 			oauth_username = request.env["omniauth.auth"]["info"]["nickname"]
 			if user = User.find_by(:username => oauth_username)
-			# THIS user exist just log them in
 				session[:user_id] = user.id
 				redirect_to "/users/#{user.id}"
 			else
 				user_password = SecureRandom.hex
-				# I know who the person is but this is the first time theyve come to our application
 				@user = User.new(:username => oauth_username, :password => user_password)
 				if @user.save
 					session[:user_id] = @user.id
 					redirect_to "/users/#{@user.id}"
 				else
-					raise @user.errors.full_messages
 					render 'sessions/new'
 				end
 			end
