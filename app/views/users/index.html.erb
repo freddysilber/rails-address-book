@@ -1,6 +1,5 @@
-<center>
-	<div class="welcomeNav">
-		<%= link_to "Sign up", "/users/new", :class => 'getStartedLink' %>
-		<%= link_to "Log in", "/sessions/new", :class => 'getStartedLink' %>
-	</div>
-</center>
+<nav class="welcomeNavigation">
+	<%= link_to "Sign up", "/users/new", :class => 'navItems' %>
+	<%= link_to "Log in with GitHub", "/users/new", :class => 'navItems' %>
+	<%= link_to "Log in", "/sessions/new", :class => 'navItems' %>
+</nav>

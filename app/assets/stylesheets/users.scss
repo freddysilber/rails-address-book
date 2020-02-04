@@ -1,26 +1,31 @@
-.welcomeNav {
+.welcomeNavigation {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: -webkit-fill-available;
+	justify-content: space-evenly;
+	align-items: stretch;
 }
-.getStartedLink {
-	color: black;
+.navItems {
+	padding-top: 50vh;
+	text-align: center;
+	height: 50vh;
+	width: 100vw;
+	background: lightskyblue;
 	text-decoration: none;
 	font-size: 3em;
-	padding: 20%;
-	background: lightskyblue;
+	color: black;
 }
-.getStartedLink:last-child {
+.navItems:hover {
+	opacity: .8;
+}
+.navItems:first-child {
+	border-top-left-radius: 2rem;
+	border-bottom-left-radius: 2rem;	
+}
+.navItems:last-child {
 	background: #666;
 	color: white;
 	border-top-right-radius: 2rem;
 	border-bottom-right-radius: 2rem;
 }
-.getStartedLink:hover {
-	opacity: .8;
-}
-.getStartedLink:first-child {
-	border-top-left-radius: 2rem;
-	border-bottom-left-radius: 2rem;
+.navItems:nth-child(2) {
+	background-color: lightgreen;
 }
