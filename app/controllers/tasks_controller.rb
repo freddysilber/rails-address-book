@@ -7,9 +7,7 @@ class TasksController < ApplicationController
 	end
 
 	def new
-		# @task = Task.new
 		@task = Task.new(project_id: params[:project_id])
-		# @contact = Contact.new(account_id: params[:account_id])
 	end
 
 	def create
