@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
 	end	
 
 	def new
-		@project = Project.new
+		@project = Project.new(account_id: params[:account_id])
 	end
 
 

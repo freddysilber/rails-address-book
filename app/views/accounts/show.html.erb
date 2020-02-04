@@ -9,8 +9,7 @@
 </center>
 <%# SHOW RELATED CONTACTS LIST %>
 <div style="display: inline">
-	<%#= link_to "New Project", "/projects/new", :class => "button", :style => "float: right" %>
-	<%= link_to "New Contact", "/accounts/#{@account.id}/contacts/new", :class => "button", :style => "float: right" %>
+	<%= link_to "New Contact", new_account_contact_path(@account), :class => "button", :style => "float: right" %>
 	<h1 class="title">Related Contacts: <%= @account.contacts.length %></h1>
 </div>
 <hr/>
@@ -24,8 +23,7 @@
 <%# SHOW RELATED PROJECTS LIST %>
 <hr/>
 <div style="display: inline">
-	<%= link_to "New Project", "/projects/new", :class => "button", :style => "float: right" %>
-	<%#= link_to "New Contact", "/accounts/#{@account.id}/contacts/new", :class => "button", :style => "float: right" %>
+	<%= link_to "New Project", new_account_project_path(@account), :class => "button", :style => "float: right" %>
 	<h1 class="title">Related Projects: <%= @account.projects.length %></h1>
 </div>
 <hr/>

@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
 	end
 
 	def new
-		@contact = Contact.new
+		@contact = Contact.new(account_id: params[:account_id])
 	end
 
 	def create 

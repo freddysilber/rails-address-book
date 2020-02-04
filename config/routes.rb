@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   resources :users
   resources :contacts
   resources :sessions
+
   resources :accounts do
     resources :contacts
+    resources :projects do
+      resources :tasks
+    end
   end
 
   resources :projects
