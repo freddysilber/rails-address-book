@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
 		@project = Project.new(account_id: params[:account_id])
 	end
 
-
 	def create
 		@project = Project.new(project_params)
 		if @project.save

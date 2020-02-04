@@ -1,10 +1,9 @@
 <%= form_for @task do |t| %>
 	<center>
+		<%= project_id_field(@task) %>
+		<br/>
 		<%= label_tag(:task_name) %>
 		<%= t.text_field :task_name, :placeholder => :task_name, :class => 'field' %>
-		<br/>
-		<%= label_tag(:project_id) %>
-		<%= t.collection_select :project_id, Project.all, :id, :project_name %>
 		<br/>
 		<%= label_tag(:status) %>
 		<%= t.select :status, options_for_select(["Open", "In Progress", "Closed"]), :class => 'field' %>
