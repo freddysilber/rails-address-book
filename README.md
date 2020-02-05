@@ -1,15 +1,21 @@
 # README
 
-Rails Address Book by Freddy Silber
+# Rails Address Book by Freddy Silber
 
 ## Outline
 
-A web app designed for keeping track of personal contacts and connections
+A project management web app designed for keeping track of personal accounts, contacts, projects, tasks and connections
 
 ## Instructions
 
 1. Fork and Clone this repository to your machine.
 
-2. Open the project in your desired IDE (cd to the project root)
+2. Open the project in your desired IDE
 
-3. Run 'rails s' or 'rails server' to open the application in your browser
+3. 'Cd' or navigate into the root project folder
+
+4. In the command line, run ```bundle install``` 
+
+5. Run ```rails s``` or ```rails server``` to start the server for developement
+
+6. In your browser, enter the URL from the running server (in the command line). i.e. 'localhost:300'
