@@ -18,6 +18,6 @@ A project management web app designed for keeping track of personal accounts, co
 
 5. Run ```rails s``` or ```rails server``` to start the server for developement
 
-6. In your browser, enter the URL from the running server (in the command line). i.e. 'localhost:300'
+6. In your browser, enter the URL from the running server (in the command line). i.e. **localhost:300**
 
 7. This will open the application in your web browser ready for use and/ or developement
