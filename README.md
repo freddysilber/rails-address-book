@@ -1,5 +1,13 @@
 # README
 
+
+            X__O
+          \ (\(
+           \/ `
+            \,
+
+
+
 # Rails Address Book by Freddy Silber
 
 ## Outline
