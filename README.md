@@ -10,7 +10,7 @@
 
 # Rails Address Book by Freddy Silber
 
-**Youtube walkthrough: [PASTE LINK HERE]**
+**Youtube walkthrough: [https://www.youtube.com/watch?v=mPOfY_4FgvI]**
 
 ## Outline
 
