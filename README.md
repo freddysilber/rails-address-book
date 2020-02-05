@@ -10,6 +10,8 @@
 
 # Rails Address Book by Freddy Silber
 
+**Youtube walkthrough: [PASTE LINK HERE]**
+
 ## Outline
 
 A project management web app designed for keeping track of personal accounts, contacts, projects, tasks and connections
