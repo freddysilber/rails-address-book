@@ -1,10 +1,9 @@
 <%= form_for @project do |p| %>
 	<center>
+		<%= account_id_field(@project) %>
+		<br/>
 		<%= label_tag(:project_name) %>
 		<%= p.text_field :project_name, :placeholder => :project_name, :class => 'field' %>
-		<br/>
-		<%= label_tag(:account_id) %>
-		<%= p.collection_select :account_id, Account.where(user_id: current_user.id), :id, :name %>
 		<br/>
 		<%= label_tag(:owner) %>
 		<%= p.collection_select :owner, User.all, :id, :username %>
