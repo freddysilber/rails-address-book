@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :accounts do
     resources :contacts
+    resources :projects
   end
   
   resources :projects do
