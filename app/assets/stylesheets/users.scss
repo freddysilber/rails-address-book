@@ -6,15 +6,17 @@
 .navItems {
 	padding-top: 50vh;
 	text-align: center;
-	height: 50vh;
+	height: calc(100vh / 2 - 2vh);
 	width: 100vw;
 	background: lightskyblue;
 	text-decoration: none;
 	font-size: 3em;
 	color: black;
+	transition: .4s;
 }
 .navItems:hover {
 	opacity: .8;
+	transition: .4s;
 }
 .navItems:first-child {
 	border-top-left-radius: 2rem;
