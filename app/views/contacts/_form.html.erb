@@ -1,6 +1,6 @@
 <%= form_for @contact do |c| %>
 	<center>
-		<%= account_id_field(@contact) %>
+		<%= contact_account_id_field(@contact) %>
 		<br/>
 		<%= label_tag(:first_name) %>
 		<%= c.text_field :first_name, :placeholder => :first_name, :class => 'field' %>

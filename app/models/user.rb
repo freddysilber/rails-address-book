@@ -13,14 +13,14 @@ class User < ApplicationRecord
 	end
 	# GET ALL ACCOUNTS BY CURRENT USER
 	def self.my_accounts(current_user_id)
-		account = Account.all.where(user_id == current_user_id)
-		# accounts = []
-		# Account.all.each do |a|
-		# 	if a.user_id == current_user_id
-		# 		accounts << a
-		# 	end
-		# end
-		# accounts
+		# accounts = Account.all.where(user_id == current_user_id) # WAS CAUSING BUGS UPON LOGIN
+		accounts = []
+		Account.all.each do |a|
+			if a.user_id == current_user_id
+				accounts << a
+			end
+		end
+		accounts
 	end	
 	# GET ALL CONTACTS BY CURRENT USER
 	def self.my_contacts(current_user_id)
