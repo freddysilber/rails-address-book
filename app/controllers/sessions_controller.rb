@@ -5,20 +5,6 @@ class SessionsController < ApplicationController
 			user = User.find_or_create_by_omniauth(auth_hash)
 			session[:user_id] = user.id
 			redirect_to "/users/#{user.id}"
-			# oauth_username = request.env["omniauth.auth"]["info"]["nickname"]
-			# if user = User.find_by(:username => oauth_username)
-			# 	session[:user_id] = user.id
-			# 	redirect_to "/users/#{user.id}"
-			# else
-			# 	user_password = SecureRandom.hex
-			# 	@user = User.new(:username => oauth_username, :password => user_password)
-			# 	if @user.save
-			# 		session[:user_id] = @user.id
-			# 		redirect_to "/users/#{@user.id}"
-			# 	else
-			# 		render 'sessions/new'
-			# 	end
-			# end
 		else
 			user = User.find_by(:username => params[:username])
 			if user && user.authenticate(params[:password])
@@ -33,7 +19,6 @@ class SessionsController < ApplicationController
 	def destroy
 		session.delete :user_id
 		redirect_to '/'
-		# redirect_to login_path # ??
 	end
 
 	def new
