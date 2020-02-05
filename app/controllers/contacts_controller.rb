@@ -17,6 +17,7 @@ class ContactsController < ApplicationController
 
 	def create 
 		@contact = Contact.new(contact_params)
+		# raise @contact.inspect
 		if @contact.save
 			redirect_to contact_path(@contact)
 		else

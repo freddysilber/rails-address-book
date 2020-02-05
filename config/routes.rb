@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'users#index'
-
   get '/auth/:provider/callback' => 'sessions#create'
 
   resources :users
@@ -8,8 +7,8 @@ Rails.application.routes.draw do
   resources :sessions
 
   resources :accounts do
-    resources :contacts
-    resources :projects
+    resources :contacts, :projects
+    # resources :projects
   end
   
   resources :projects do
