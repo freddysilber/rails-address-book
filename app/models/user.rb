@@ -21,6 +21,7 @@ class User < ApplicationRecord
 			end
 		end
 		accounts
+		# self.accounts
 	end	
 	# GET ALL CONTACTS BY CURRENT USER
 	def self.my_contacts(current_user_id)
@@ -31,5 +32,16 @@ class User < ApplicationRecord
 			end
 		end
 		contacts
+	end
+
+	def self.my_projects(current_user_id)
+		projects = []
+
+		Project.all.each do |p|
+			if p.account.user_id == current_user_id
+				projects << p
+			end
+		end
+		projects 
 	end
 end

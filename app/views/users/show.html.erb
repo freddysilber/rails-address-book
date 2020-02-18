@@ -9,7 +9,7 @@
 			<hr/>
 			<% @my_accounts.each do |a| %>
 				<%= render partial: "accounts/account", locals: {a: a} %>
-			<% end %>
+			<% end %> 
 		</div>
 		<%# SHOW CONTACTS I OWN %>
 		<div class="box">
@@ -18,6 +18,22 @@
 			<% @my_contacts.each do |c| %>
 				<%= render partial: "contacts/contact", locals: {c: c} %>
 			<% end %>
+		</div>
+
+
+		<div class="box">
+			<h1 class="title">My Projects</h1>
+			<hr/>
+
+			<% @user.projects.each do |p| %>
+				<%= render partial: "projects/project", locals: {p: p}%>
+				<% p.tasks.each do |t| %>
+					<p style="color:white"><%= t.task_name %></p>
+					<br/>
+					<%#= render partial: 'tasks/task', locals: {t:t}%>
+				<% end %>
+			<% end %>
+
 		</div>
 	</div>
 </center>
