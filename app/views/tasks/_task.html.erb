@@ -1,6 +1,6 @@
-<h1><%= link_to "#{t.task_name.capitalize}", "/tasks/#{t.id}", :class => "navigateToRecord" %></h1>
+<h1><%= link_to "#{t.task_name.capitalize}", task_path(t.id), :class => "navigateToRecord" %></h1>
 <p><em>Task Name: </em><%= t.task_name %></p>
-<p><em>Project Name: </em><%= link_to t.project.project_name, "/projects/#{t.project.id}", :class => "navigateToRecord" %></p>
+<p><em>Project Name: </em><%= link_to t.project.project_name, project_path(t.project.id), :class => "navigateToRecord" %></p>
 <p><em>Start Date: </em><%= t.start_date %></p>
 <p><em>End Date: </em><%= t.end_date %></p>
 <hr/>

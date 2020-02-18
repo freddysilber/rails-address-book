@@ -1,7 +1,7 @@
-<h1><%= link_to "#{c.first_name.capitalize} #{c.last_name.capitalize}", "/contacts/#{c.id}", :class => "navigateToRecord" %></h1>
+<h1><%= link_to "#{c.first_name.capitalize} #{c.last_name.capitalize}", contact_path(c.id), :class => "navigateToRecord" %></h1>
 <p><em>First Name: </em><%= c.first_name %></p>
 <p><em>Last Name: </em><%= c.last_name %></p>
 <p><em>Phone Number: </em><%= c.phone_number %></p>
 <p><em>Email: </em><%= c.email %></p>
-<p><em>Account: </em><%= link_to c.account.name, "/accounts/#{c.account.id}", :class => "navigateToRecord" %></p>
+<p><em>Account: </em><%= link_to c.account.name, account_path(c.account.id), :class => "navigateToRecord" %></p>
 <hr/>
